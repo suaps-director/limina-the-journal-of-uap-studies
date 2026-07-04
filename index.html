@@ -1,0 +1,1840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limina Author Guidelines | Society for UAP Studies</title>
+    <meta name="description" content="Author guidance, editorial process, and submission-type requirements for Limina: The Journal of UAP Studies.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy:        #18243A;
+            --navy-deep:   #0F1726;
+            --navy-mid:    #22304A;
+            --ink:         #1E252D;
+            --ink-soft:    #2B333D;
+            --limina-blue: #3E80AE;
+            --blue-light:  #6AA6CE;
+            --gold:        #B8962E;
+            --gold-light:  #D6B75A;
+            --white:       #FFFFFF;
+            --off-white:   #F7F5F0;
+            --cream:       #ECE8DF;
+            --gray-100:    #F0EEE8;
+            --gray-200:    #DDD8CE;
+            --gray-400:    #948C80;
+            --gray-600:    #5D574F;
+            --body-text:   #2A2520;
+            --type-display:'EB Garamond', Georgia, serif;
+            --type-body:   'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --type-mono:   'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+            --radius:      4px;
+            --max-width:   1100px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--type-body);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--body-text);
+            background: var(--off-white);
+        }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+        ::selection { background: rgba(184,150,46,0.22); }
+
+        .container { width: 92%; max-width: var(--max-width); margin: 0 auto; }
+        .container--narrow { width: 92%; max-width: 790px; margin: 0 auto; }
+
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(15, 23, 38, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(184,150,46,0.22);
+            padding: 0.85rem 0;
+        }
+        .nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem; }
+        .nav__brand { display: flex; align-items: center; gap: 0.75rem; color: var(--white); min-width: max-content; }
+        .nav__brand-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid rgba(184,150,46,0.42);
+            background: var(--navy-mid);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--type-display);
+            font-size: 0.95rem;
+            color: var(--gold-light);
+        }
+        .nav__brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+        .nav__brand-title { font-size: 0.86rem; font-weight: 500; letter-spacing: 0.01em; }
+        .nav__brand-sub { font-family: var(--type-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+        .nav__links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 0.9rem 1.35rem; list-style: none; }
+        .nav__links a {
+            font-size: 0.75rem;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.62);
+            transition: color 0.2s;
+        }
+        .nav__links a:hover { color: var(--gold-light); }
+        .nav__submit {
+            border: 1px solid rgba(184,150,46,0.38);
+            border-radius: var(--radius);
+            padding: 0.34rem 0.72rem;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: var(--navy-deep);
+            padding: 6.5rem 0 5.25rem;
+            color: var(--white);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 72% 58% at 88% 18%, rgba(62,128,174,0.10) 0%, transparent 64%),
+                radial-gradient(ellipse 45% 65% at 5% 92%, rgba(184,150,46,0.08) 0%, transparent 64%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+            background-size: 52px 52px;
+            mask-image: radial-gradient(ellipse 78% 78% at 50% 34%, #000 0%, transparent 80%);
+            -webkit-mask-image: radial-gradient(ellipse 78% 78% at 50% 34%, #000 0%, transparent 80%);
+            pointer-events: none;
+        }
+        .hero__inner { position: relative; z-index: 1; }
+        .eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--type-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 1.25rem;
+        }
+        .eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); display: inline-block; }
+        .hero__title {
+            font-family: var(--type-display);
+            font-size: clamp(2.45rem, 5.4vw, 4.45rem);
+            font-weight: 500;
+            font-style: italic;
+            line-height: 1.08;
+            max-width: 860px;
+            margin-bottom: 0.75rem;
+        }
+        .hero__subtitle {
+            font-family: var(--type-display);
+            font-size: clamp(1.18rem, 2.4vw, 1.72rem);
+            font-weight: 400;
+            color: var(--blue-light);
+            margin-bottom: 1.7rem;
+        }
+        .hero__lede {
+            max-width: 700px;
+            font-size: 1.02rem;
+            font-weight: 300;
+            line-height: 1.82;
+            color: rgba(255,255,255,0.68);
+            margin-bottom: 2rem;
+        }
+        .hero__actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2rem; }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 43px;
+            border-radius: var(--radius);
+            padding: 0 1rem;
+            font-family: var(--type-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.2s;
+        }
+        .button:hover { transform: translateY(-1px); }
+        .button--primary { background: var(--gold); color: var(--navy-deep); border: 1px solid var(--gold); }
+        .button--secondary { color: rgba(255,255,255,0.78); border: 1px solid rgba(255,255,255,0.2); }
+        .button--secondary:hover { border-color: rgba(184,150,46,0.58); color: var(--gold-light); }
+        .hero__meta { display: flex; flex-wrap: wrap; gap: 1.25rem 2rem; }
+        .hero__meta-item { display: flex; flex-direction: column; gap: 0.15rem; }
+        .hero__meta-label { font-family: var(--type-mono); font-size: 0.63rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+        .hero__meta-value { font-size: 0.86rem; color: rgba(255,255,255,0.84); }
+
+        .context { background: var(--navy-mid); border-top: 1px solid rgba(184,150,46,0.18); border-bottom: 1px solid rgba(184,150,46,0.18); padding: 1.45rem 0; }
+        .context__inner { display: flex; align-items: flex-start; gap: 1rem; }
+        .context__mark { font-family: var(--type-mono); font-size: 1.4rem; color: var(--gold); line-height: 1; opacity: 0.8; }
+        .context__text { font-family: var(--type-display); font-size: 0.98rem; font-style: italic; color: rgba(255,255,255,0.68); line-height: 1.72; max-width: 920px; }
+
+        .section { padding: 5.3rem 0; }
+        .section--light { background: var(--white); }
+        .section--cream { background: var(--off-white); }
+        .section--dark { background: var(--ink); color: var(--white); }
+        .section--navy { background: var(--navy-deep); color: var(--white); }
+        .section__label { font-family: var(--type-mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--limina-blue); margin-bottom: 0.62rem; }
+        .section--dark .section__label, .section--navy .section__label { color: var(--gold-light); }
+        .section__title { font-family: var(--type-display); font-size: clamp(1.75rem, 3.2vw, 2.55rem); font-weight: 500; line-height: 1.2; color: var(--ink); margin-bottom: 1rem; }
+        .section--dark .section__title, .section--navy .section__title { color: var(--white); }
+        .section__lead { font-size: 1.03rem; color: var(--gray-600); max-width: 760px; line-height: 1.78; margin-bottom: 2.5rem; }
+        .section--dark .section__lead, .section--navy .section__lead { color: rgba(255,255,255,0.62); }
+
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; }
+        .two-col--2-3 { grid-template-columns: 2fr 3fr; }
+        .two-col--3-2 { grid-template-columns: 3fr 2fr; }
+        .prose p { color: var(--gray-600); font-size: 0.96rem; line-height: 1.84; margin-bottom: 1.05em; }
+        .prose p:last-child { margin-bottom: 0; }
+        .prose--light p { color: rgba(255,255,255,0.69); }
+        .requirement-line {
+            border-left: 2px solid rgba(62,128,174,0.24);
+            padding-left: 0.9rem;
+            background: linear-gradient(90deg, rgba(62,128,174,0.045), transparent 55%);
+        }
+        .section--dark .requirement-line, .section--navy .requirement-line { border-left-color: rgba(184,150,46,0.35); background: linear-gradient(90deg, rgba(184,150,46,0.08), transparent 55%); }
+
+        .process-list { display: grid; gap: 0.7rem; }
+        .process-step {
+            display: grid;
+            grid-template-columns: 3.6rem minmax(0,1fr);
+            gap: 1rem;
+            padding: 1.05rem 1.2rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-left: 3px solid transparent;
+            border-radius: var(--radius);
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .process-step:hover { border-left-color: var(--limina-blue); box-shadow: 0 8px 28px rgba(24,36,58,0.08); transform: translateY(-1px); }
+        .process-step__num { font-family: var(--type-mono); color: var(--limina-blue); font-size: 0.78rem; letter-spacing: 0.07em; padding-top: 0.15rem; }
+        .process-step p { color: var(--gray-600); font-size: 0.88rem; line-height: 1.7; }
+
+        .reasons-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-top: 3px solid var(--gold); border-radius: 0 0 var(--radius) var(--radius); padding: 1.4rem 1.5rem; }
+        .mini-label { font-family: var(--type-mono); font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 0.9rem; }
+        .reasons-list { list-style: none; display: grid; gap: 0.55rem; }
+        .reasons-list li { position: relative; padding-left: 1.25rem; color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.65; border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 0.55rem; }
+        .reasons-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+        .reasons-note { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.09); }
+        .reasons-note p { color: rgba(255,255,255,0.6); font-size: 0.86rem; line-height: 1.72; }
+
+        .type-index { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.85rem; margin: 2rem 0 3rem; }
+        .type-tile {
+            display: grid;
+            grid-template-columns: 2.4rem minmax(0, 1fr);
+            gap: 0.8rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.09);
+            border-top: 3px solid rgba(255,255,255,0.13);
+            border-radius: 0 0 var(--radius) var(--radius);
+            min-height: 150px;
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .type-tile:hover { background: rgba(62,128,174,0.1); border-color: rgba(106,166,206,0.28); border-top-color: var(--blue-light); transform: translateY(-2px); }
+        .type-tile__num { font-family: var(--type-mono); font-size: 0.68rem; color: var(--blue-light); padding-top: 0.14rem; }
+        .type-tile__content { display: flex; flex-direction: column; gap: 0.28rem; }
+        .type-tile__label { font-family: var(--type-mono); font-size: 0.58rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gold-light); }
+        .type-tile__title { font-family: var(--type-display); font-size: 1.08rem; font-weight: 500; color: var(--white); line-height: 1.22; }
+        .type-tile__desc { font-size: 0.77rem; line-height: 1.55; color: rgba(255,255,255,0.54); }
+
+        .guide-tools { display: flex; flex-wrap: wrap; gap: 0.65rem; margin: 0 0 1.2rem; }
+        .tool-button {
+            background: transparent;
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 0.55rem 0.75rem;
+            font-family: var(--type-mono);
+            font-size: 0.64rem;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: border-color 0.2s, color 0.2s, background 0.2s;
+        }
+        .tool-button:hover { color: var(--limina-blue); border-color: rgba(62,128,174,0.42); background: rgba(62,128,174,0.04); }
+        .type-accordion { display: grid; gap: 0.75rem; }
+        .additional-heading { margin: 1.5rem 0 0.3rem; font-family: var(--type-mono); font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+        .submission-type {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            overflow: clip;
+            scroll-margin-top: 6rem;
+        }
+        .submission-type[open] { box-shadow: 0 12px 36px rgba(24,36,58,0.08); border-color: rgba(62,128,174,0.34); }
+        .submission-type summary {
+            list-style: none;
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: 3rem minmax(0, 1fr) auto;
+            gap: 1rem;
+            align-items: center;
+            padding: 1.05rem 1.2rem;
+        }
+        .submission-type summary::-webkit-details-marker { display: none; }
+        .summary-num { font-family: var(--type-mono); font-size: 0.72rem; color: var(--limina-blue); }
+        .summary-main { display: flex; flex-direction: column; gap: 0.2rem; }
+        .summary-label { font-family: var(--type-mono); font-size: 0.58rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gold); }
+        .summary-title { font-family: var(--type-display); font-size: 1.22rem; font-weight: 500; color: var(--ink); line-height: 1.22; }
+        .summary-desc { font-size: 0.82rem; color: var(--gray-600); line-height: 1.55; }
+        .summary-action {
+            font-family: var(--type-mono);
+            font-size: 0.63rem;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            border: 1px solid var(--gray-200);
+            border-radius: 2rem;
+            padding: 0.25rem 0.58rem;
+        }
+        .submission-type[open] .summary-action { color: var(--limina-blue); border-color: rgba(62,128,174,0.32); }
+        .submission-type[open] .summary-action::before { content: 'Close '; }
+        .submission-type[open] .summary-action { font-size: 0; }
+        .submission-type[open] .summary-action::before { font-size: 0.63rem; }
+        .submission-type__body { border-top: 1px solid var(--gray-200); padding: 1.4rem 1.2rem 1.55rem 5.2rem; background: linear-gradient(180deg, #fff, #fbfaf7); }
+
+
+        .issn-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            margin-top: 1.15rem;
+            padding: 0.42rem 0.72rem;
+            border: 1px solid rgba(184,150,46,0.28);
+            border-radius: 2rem;
+            background: rgba(184,150,46,0.08);
+            color: rgba(255,255,255,0.66);
+            font-family: var(--type-mono);
+            font-size: 0.64rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+        .issn-note span { color: var(--gold-light); }
+
+
+        /* Field Map of UAP Studies */
+        .field-map__intro {
+            display: grid;
+            grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.55fr);
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2.2rem;
+        }
+        .field-map__note {
+            border-left: 2px solid rgba(184,150,46,0.42);
+            padding: 0.85rem 0 0.85rem 1.05rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.88rem;
+            line-height: 1.78;
+        }
+        .axis-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.85rem;
+            margin: 2.1rem 0 3.2rem;
+        }
+        .axis-card {
+            position: relative;
+            min-height: 260px;
+            padding: 1.35rem 1.35rem 1.45rem;
+            border: 1px solid rgba(255,255,255,0.11);
+            border-top: 3px solid rgba(184,150,46,0.72);
+            border-radius: 0 0 var(--radius) var(--radius);
+            background:
+                linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02)),
+                radial-gradient(ellipse 90% 70% at 92% 8%, rgba(62,128,174,0.12), transparent 60%);
+            overflow: hidden;
+        }
+        .axis-card::after {
+            content: '';
+            position: absolute;
+            right: -54px;
+            bottom: -54px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid rgba(184,150,46,0.12);
+            border-radius: 50%;
+        }
+        .axis-card__label {
+            font-family: var(--type-mono);
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 0.85rem;
+        }
+        .axis-card__title {
+            font-family: var(--type-display);
+            font-size: 1.25rem;
+            line-height: 1.22;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+        .axis-card__body {
+            position: relative;
+            z-index: 1;
+            font-size: 0.86rem;
+            line-height: 1.72;
+            color: rgba(255,255,255,0.62);
+        }
+        .field-architecture {
+            display: grid;
+            grid-template-columns: minmax(255px, 0.45fr) minmax(0, 1fr);
+            gap: 2rem;
+            align-items: start;
+        }
+        .field-map__side {
+            position: sticky;
+            top: 6.1rem;
+            border-top: 1px solid rgba(184,150,46,0.35);
+            padding-top: 1.1rem;
+        }
+        .field-map__side h3 {
+            font-family: var(--type-display);
+            font-size: clamp(1.35rem, 2.3vw, 1.85rem);
+            font-weight: 500;
+            line-height: 1.2;
+            color: var(--white);
+            margin-bottom: 0.85rem;
+        }
+        .field-map__side p {
+            font-size: 0.88rem;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.58);
+            margin-bottom: 1rem;
+        }
+        .field-key {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-top: 1.2rem;
+        }
+        .field-key span {
+            font-family: var(--type-mono);
+            font-size: 0.58rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 2rem;
+            padding: 0.22rem 0.48rem;
+        }
+        .field-category-list {
+            display: grid;
+            gap: 0.62rem;
+        }
+        .field-category {
+            background: var(--white);
+            border: 1px solid rgba(224,221,213,0.95);
+            border-left: 3px solid transparent;
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .field-category:hover {
+            border-left-color: var(--gold);
+            box-shadow: 0 8px 26px rgba(0,0,0,0.16);
+            transform: translateY(-1px);
+        }
+        .field-category[open] { border-left-color: var(--limina-blue); }
+        .field-category summary {
+            list-style: none;
+            cursor: pointer;
+            display: grid;
+            grid-template-columns: 2.65rem minmax(0,1fr) auto;
+            gap: 0.85rem;
+            align-items: center;
+            padding: 1rem 1.1rem;
+        }
+        .field-category summary::-webkit-details-marker { display: none; }
+        .field-category__num {
+            width: 2.1rem;
+            height: 2.1rem;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--type-mono);
+            font-size: 0.68rem;
+            color: var(--limina-blue);
+            background: rgba(62,128,174,0.1);
+            border: 1px solid rgba(62,128,174,0.18);
+        }
+        .field-category__title {
+            font-family: var(--type-display);
+            font-size: 1.05rem;
+            line-height: 1.25;
+            color: var(--ink);
+        }
+        .field-category__cluster {
+            font-family: var(--type-mono);
+            font-size: 0.56rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            white-space: nowrap;
+            border: 1px solid var(--gray-200);
+            border-radius: 2rem;
+            padding: 0.22rem 0.5rem;
+        }
+        .field-category[open] .field-category__cluster { color: var(--limina-blue); border-color: rgba(62,128,174,0.28); }
+        .field-category__body {
+            padding: 0 1.1rem 1.2rem 4.6rem;
+            border-top: 1px solid var(--gray-200);
+            background: linear-gradient(180deg, #fff, #fbfaf7);
+        }
+        .field-category__description {
+            color: var(--gray-600);
+            font-size: 0.88rem;
+            line-height: 1.75;
+            margin: 1rem 0 0.75rem;
+        }
+        .field-category__question {
+            border-left: 2px solid rgba(62,128,174,0.24);
+            background: rgba(62,128,174,0.045);
+            color: var(--ink-soft);
+            font-size: 0.82rem;
+            line-height: 1.65;
+            padding: 0.65rem 0.85rem;
+            margin-bottom: 0.85rem;
+        }
+        .field-category__minimums {
+            display: grid;
+            gap: 0.35rem;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .field-category__minimums li {
+            position: relative;
+            color: var(--gray-600);
+            font-size: 0.78rem;
+            line-height: 1.5;
+            padding-left: 0.95rem;
+        }
+        .field-category__minimums li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.56em;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+        .principles-panel {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .principles-panel__head {
+            display: grid;
+            grid-template-columns: minmax(0,0.65fr) minmax(0,1fr);
+            gap: 2rem;
+            align-items: end;
+            margin-bottom: 1.2rem;
+        }
+        .principles-panel__head h3 {
+            font-family: var(--type-display);
+            font-size: clamp(1.35rem, 2.3vw, 1.85rem);
+            font-weight: 500;
+            color: var(--white);
+            line-height: 1.2;
+        }
+        .principles-panel__head p {
+            color: rgba(255,255,255,0.58);
+            font-size: 0.88rem;
+            line-height: 1.75;
+        }
+        .principle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0,1fr));
+            gap: 0.75rem;
+        }
+        .principle-card {
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.04);
+            border-radius: var(--radius);
+            padding: 1rem 1.05rem;
+        }
+        .principle-card__title {
+            font-family: var(--type-mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 0.55rem;
+        }
+        .principle-card p {
+            margin: 0;
+            color: rgba(255,255,255,0.58);
+            font-size: 0.8rem;
+            line-height: 1.65;
+        }
+
+        .board-intro {
+            display: grid;
+            grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.55fr);
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+        .board-note {
+            border-left: 2px solid rgba(184,150,46,0.42);
+            padding: 0.85rem 0 0.85rem 1.05rem;
+            color: rgba(255,255,255,0.58);
+            font-size: 0.86rem;
+            line-height: 1.7;
+        }
+        .board-note a {
+            color: var(--gold-light);
+            border-bottom: 1px solid rgba(184,150,46,0.4);
+        }
+        .board-leadership {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.9rem;
+            margin-bottom: 1.4rem;
+        }
+        .board-person {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-top: 3px solid rgba(184,150,46,0.65);
+            border-radius: 0 0 var(--radius) var(--radius);
+            padding: 1.15rem 1.2rem;
+            min-height: 168px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            transition: border-color 0.2s, background 0.2s, transform 0.2s;
+        }
+        .board-person:hover {
+            background: rgba(255,255,255,0.065);
+            border-color: rgba(184,150,46,0.34);
+            transform: translateY(-1px);
+        }
+        .board-person--lead {
+            background: rgba(62,128,174,0.09);
+            border-color: rgba(106,166,206,0.26);
+            border-top-color: var(--blue-light);
+        }
+        .board-person__role {
+            font-family: var(--type-mono);
+            font-size: 0.58rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+        }
+        .board-person--lead .board-person__role { color: var(--blue-light); }
+        .board-person__name {
+            font-family: var(--type-display);
+            font-size: 1.14rem;
+            line-height: 1.22;
+            color: var(--white);
+        }
+        .board-person__title,
+        .board-person__affiliation,
+        .board-person__country {
+            font-size: 0.8rem;
+            line-height: 1.55;
+            color: rgba(255,255,255,0.56);
+        }
+        .board-person__country {
+            margin-top: auto;
+            font-family: var(--type-mono);
+            font-size: 0.61rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+        }
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+
+        .submit-band { background: var(--navy-deep); color: var(--white); padding: 4.5rem 0; }
+        .submit-band__inner { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+        .submit-band h2 { font-family: var(--type-display); font-size: clamp(1.7rem, 3vw, 2.55rem); font-weight: 500; line-height: 1.2; max-width: 720px; }
+        .submit-band p { font-size: 0.95rem; color: rgba(255,255,255,0.62); margin-top: 0.6rem; max-width: 620px; }
+
+        .footer { background: var(--ink); color: var(--white); border-top: 1px solid rgba(255,255,255,0.08); padding: 1.6rem 0; }
+        .footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+        .footer__title { font-family: var(--type-display); font-size: 1.25rem; font-weight: 500; }
+        .footer__sub { font-size: 0.78rem; color: rgba(255,255,255,0.46); }
+        .footer__links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 1rem; }
+        .footer__links a { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+        .footer__links a:hover { color: var(--gold-light); }
+
+        @media (max-width: 900px) {
+            .nav__inner { align-items: flex-start; flex-direction: column; }
+            .nav__links { justify-content: flex-start; }
+            .two-col, .two-col--2-3, .two-col--3-2 { grid-template-columns: 1fr; gap: 2rem; }
+            .type-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .field-map__intro, .field-architecture, .principles-panel__head, .board-intro { grid-template-columns: 1fr; }
+            .field-map__side { position: static; }
+            .axis-grid, .principle-grid { grid-template-columns: 1fr; }
+            .board-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .submit-band__inner, .footer__inner { align-items: flex-start; flex-direction: column; }
+            .footer__links { justify-content: flex-start; }
+        }
+        @media (max-width: 620px) {
+            .hero { padding: 4.5rem 0 3.6rem; }
+            .section { padding: 3.8rem 0; }
+            .type-index { grid-template-columns: 1fr; }
+            .board-leadership, .board-grid { grid-template-columns: 1fr; }
+            .field-category summary { grid-template-columns: 2.35rem minmax(0,1fr); }
+            .field-category__cluster { grid-column: 2; justify-self: start; }
+            .field-category__body { padding: 1.15rem; }
+            .type-tile { min-height: auto; }
+            .submission-type summary { grid-template-columns: 2.2rem minmax(0,1fr); }
+            .summary-action { display: none; }
+            .submission-type__body { padding: 1.25rem; }
+            .process-step { grid-template-columns: 2.4rem minmax(0,1fr); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+        }
+    
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    </style>
+</head>
+<body>
+    <nav class="nav" aria-label="Primary navigation">
+        <div class="container nav__inner">
+            <a class="nav__brand" href="https://www.societyforuapstudies.org/" aria-label="Society for UAP Studies">
+                <span class="nav__brand-logo">L</span>
+                <span class="nav__brand-text">
+                    <span class="nav__brand-title">Limina</span>
+                    <span class="nav__brand-sub">Journal of UAP Studies</span>
+                </span>
+            </a>
+            <ul class="nav__links">
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#field-map">Field Map</a></li>
+                <li><a href="#process">Review</a></li>
+                <li><a href="#revisions">Decisions</a></li>
+                <li><a href="#editorial-board">Board</a></li>
+                <li><a href="#types">Types</a></li>
+                <li><a class="nav__submit" href="https://limina.scholasticahq.com/">Submit</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="top">
+        <div class="container hero__inner">
+            <p class="eyebrow">Author Guidelines</p>
+            <h1 class="hero__title">Limina: The Journal of UAP Studies</h1>
+            <p class="hero__subtitle">Submission guidance for rigorous work at the threshold.</p>
+            <p class="hero__lede">Limina is an open-access, peer-reviewed academic journal dedicated to the serious, multidisciplinary study of unidentified aerospace phenomena and the methodological questions raised by an emerging field.</p>
+            <div class="hero__actions">
+                <a class="button button--primary" href="https://limina.scholasticahq.com/">Submit through Scholastica</a>
+                <a class="button button--secondary" href="#types">Browse submission types</a>
+                <a class="button button--secondary" href="#field-map">View field map</a>
+                <a class="button button--secondary" href="#process">Review process</a>
+            </div>
+            <div class="hero__meta" aria-label="Journal attributes">
+                <div class="hero__meta-item"><span class="hero__meta-label">Access</span><span class="hero__meta-value">Open access</span></div>
+                <div class="hero__meta-item"><span class="hero__meta-label">Review</span><span class="hero__meta-value">Double blind</span></div>
+                <div class="hero__meta-item"><span class="hero__meta-label">Scope</span><span class="hero__meta-value">Multidisciplinary / interdisciplinary</span></div>
+                <div class="hero__meta-item"><span class="hero__meta-label">Style</span><span class="hero__meta-value">Generally Chicago style</span></div>
+                <div class="hero__meta-item"><span class="hero__meta-label">ISSN</span><span class="hero__meta-value">ISSN: 2995-0384 (Online) | ISSN: 2995-0376 (Print)</span></div>
+            </div>
+            <div class="issn-note" aria-label="Limina ISSN numbers"><span>ISSN</span> 2995-0384 (Online) | 2995-0376 (Print)</div>
+        </div>
+    </header>
+
+    <aside class="context" aria-label="Liminal framing">
+        <div class="container context__inner">
+            <div class="context__mark">//</div>
+            <p class="context__text">The journal’s title invokes the liminal: a transitional stage in the development of UAP studies and a threshold where assumptions about evidence, experience, and inquiry require unusual care.</p>
+        </div>
+    </aside>
+
+    <main>
+        <section class="section section--light" id="mission">
+            <div class="container two-col two-col--2-3">
+                <div>
+                    <p class="section__label">About and mission</p>
+                    <h2 class="section__title">A serious academic venue for an emerging field.</h2>
+                    <p class="section__lead">The following text preserves the journal’s core self-description and mission while giving it a calmer, more readable editorial presentation.</p>
+                </div>
+                <div>
+                    <h3 class="sr-only">About Us</h3>
+<div class="prose">
+  <p>Limina is an open-access, peer-reviewed academic journal. Its fundamental purpose and most basic intent is to advance the study of unidentified aerospace phenomena to the next level of serious, rigorous, academic scholarship. Limina takes its name from the two ways of defining the adjective “liminal”, both of which we see as relevant and necessary for understanding the study of the multifaceted UAP phenomenon. The first definition of “liminal” is “a transitional or initial stage of a process”. In our case, this is the process of advancing the study of the UAP phenomenon in the direction of some future science that is capable of accounting for the phenomenon as a whole, to include its many anomalous layers (from the more physical to the more psychical). The second definition of “liminal” is “occupying a position at or both sides of a boundary or threshold”. In our case, this directly relates to what Limina will study: the UAP phenomenon as precisely one existing at the boundary or threshold of what is considered ordinary or normal, or what is considered an acceptable object of serious academic and/or scientific investigation.</p>
+</div>
+                    <div style="height:1.75rem"></div>
+                    <h3 class="section__label">Mission Statement</h3>
+<div class="prose">
+  <p>Despite the growing awareness as to the existence of UAP resulting from revelations by the military, government agencies, and legitimate mainstream media, and despite the increased discussions on social media platforms, currently there exists no serious academic journal devoted specifically to the multifaceted UAP phenomenon. Limina is meant to rectify this oversight.  As the world is now beginning to acknowledge the reality of UAP, the study of UAP is entering a new phase, wherein more scientists, other academic researchers, and major academic institutions are engaged in a serious effort to describe, understand, and explain UAP. Just as with the Journal of Consciousness Studies in its inception in the 90s, before there was any agreement as to what a science of consciousness was and ought to be, Limina will be multidisciplinary and interdisciplinary, to include for example psychology and the social sciences, as well as the natural sciences and humanities.  Indeed, given the infant status of academic UAP studies, the journal will also entertain submissions on foundational and methodological questions pertaining to what a science investigating this kind of a phenomenon ought to look like, e.g., what phenomena reasonably counts as relevant under the UAP topic and crucial epistemological issues about what ought to count as legitimate evidence to reason about, such as certain kinds of first-person testimony.</p>
+</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--dark" id="field-map">
+            <div class="container">
+                <div class="field-map__intro">
+                    <div>
+                        <p class="section__label">Field Map</p>
+                        <h2 class="section__title">How Limina understands the territory of UAP Studies.</h2>
+                        <p class="section__lead">This author-facing field map translates Limina’s editorial framework into a navigable guide for prospective contributors. It clarifies where a manuscript sits, what kind of evidence or argument it needs, and how editors will understand disciplinary fit before peer review.</p>
+                    </div>
+                    <p class="field-map__note">UAP Studies is presented here as a matrix field rather than a single discipline. Submissions may be empirical, experimental, interpretive, historical, philosophical, policy-oriented, artistic, experiential, or hybrid—but each must make its evidentiary basis, method, and claims discipline visible.</p>
+                </div>
+
+                <div class="axis-grid" aria-label="Three axes of UAP Studies">
+                    <article class="axis-card">
+                        <div class="axis-card__label">Axis 01</div>
+                        <h3 class="axis-card__title">Empirical / Observational</h3>
+                        <p class="axis-card__body">Focuses on what is observed or detected: instrumented field data, remote sensing, quantitative documentation, environmental context, and careful description of observable events.</p>
+                    </article>
+                    <article class="axis-card">
+                        <div class="axis-card__label">Axis 02</div>
+                        <h3 class="axis-card__title">Experimental / Constructive</h3>
+                        <p class="axis-card__body">Asks what can be tested, replicated, modeled, or built: controlled experiments, engineering analogues, simulations, sensor validation, and provisional causal mechanisms.</p>
+                    </article>
+                    <article class="axis-card">
+                        <div class="axis-card__label">Axis 03</div>
+                        <h3 class="axis-card__title">Interpretive / Theoretical &amp; Humanistic</h3>
+                        <p class="axis-card__body">Addresses meaning, implication, and boundary conditions: philosophy, history, culture, social response, first-person experience, representation, ethics, and epistemic limits.</p>
+                    </article>
+                </div>
+
+                <div class="field-architecture">
+                    <aside class="field-map__side" aria-label="How to use the Field Map">
+                        <p class="section__label">Submission standards by field</p>
+                        <h3>Sixteen routes into the field.</h3>
+                        <p>Use these categories to position a submission before selecting an article type. A strong paper may occupy more than one category, but it should still identify a primary field of contribution.</p>
+                        <p>The items below are not a replacement for the submission-type guide; they are a second layer of field-specific readiness criteria.</p>
+                        <div class="field-key" aria-label="Field Map keywords">
+                            <span>Evidence</span>
+                            <span>Method</span>
+                            <span>Ethics</span>
+                            <span>Traceability</span>
+                            <span>Claims discipline</span>
+                        </div>
+                    </aside>
+                    <div class="field-category-list" aria-label="Sixteen core categories of UAP Studies">
+                            <details class="field-category" open>
+                                <summary>
+                                    <span class="field-category__num">01</span>
+                                    <span class="field-category__title">Empirical / Observational UAP Research</span>
+                                    <span class="field-category__cluster">Observation and measurement</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Instrumented, non-first-person observation of UAP using optical, infrared, radar, magnetometric, or related systems.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>What are the measurable properties, trajectories, and environments of UAP?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Sensor specifications and calibration metadata</li>
+                                        <li>Environmental, astronomical, biological, and optical confound analysis</li>
+                                        <li>Image-processing transparency</li>
+                                        <li>Data accessibility or justified restriction</li>
+                                        <li>Proportionality between data and claims</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">02</span>
+                                    <span class="field-category__title">Experimental &amp; Laboratory Studies</span>
+                                    <span class="field-category__cluster">Testing and construction</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Controlled experiments testing physical analogues, plasma phenomena, sensor response, materials, simulations, or field-coupling mechanisms.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>Can reported behaviors be reproduced, constrained, or falsified under controlled conditions?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Clear experimental design and control conditions</li>
+                                        <li>Uncertainty analysis and appropriate statistics</li>
+                                        <li>Safety and ethics compliance</li>
+                                        <li>Calibration documentation</li>
+                                        <li>Replicability statement</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">03</span>
+                                    <span class="field-category__title">Data Science, Methods &amp; Instrumentation</span>
+                                    <span class="field-category__cluster">Methods and tools</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Development of analytic tools, software, metadata systems, hardware, observatories, or classification methods for UAP-related data.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>How can detection, classification, analysis, or data management be improved?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Algorithmic transparency or sufficient functional disclosure</li>
+                                        <li>Performance metrics against baselines</li>
+                                        <li>Availability of code, sample data, or pseudocode where feasible</li>
+                                        <li>Bias, limitation, and failure-mode analysis</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">04</span>
+                                    <span class="field-category__title">Theoretical &amp; Conceptual Modeling</span>
+                                    <span class="field-category__cluster">Modeling and explanation</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Physical, mathematical, systems-theoretic, or conceptual models addressing propulsion, field interactions, observational anomalies, or explanatory frameworks.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>Which theoretical frameworks can account for reported behaviors without over-extrapolation?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Explicit premises, equations, or logical models</li>
+                                        <li>Connection to established scientific or philosophical literature</li>
+                                        <li>Clear empirical implications or constraints</li>
+                                        <li>Distinction between hypothesis, possibility, plausibility, and speculation</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">05</span>
+                                    <span class="field-category__title">Phenomenology &amp; First-Person Studies</span>
+                                    <span class="field-category__cluster">Experience and description</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Rigorous qualitative analysis of lived experiences of UAP events using phenomenological or related first-person methods.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>What is the structure of UAP experience as described by witnesses or experiencers?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Declared methodological framework</li>
+                                        <li>Ethical treatment, informed consent, and privacy protection</li>
+                                        <li>Researcher reflexivity</li>
+                                        <li>Separation of phenomenological description from ontological theory</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">06</span>
+                                    <span class="field-category__title">Psychology &amp; Cognitive / Clinical Research</span>
+                                    <span class="field-category__cluster">Mind, perception, and impact</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Empirical or theoretical work on perception, memory, cognition, trauma, belief, clinical impact, consciousness, and psychological response.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>How do cognitive and psychological processes shape UAP perception, reporting, and aftereffects?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>IRB or ethics approval where applicable</li>
+                                        <li>Valid instruments and sampling plans</li>
+                                        <li>Transparent statistical or qualitative reporting</li>
+                                        <li>Respectful, non-pathologizing framing</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">07</span>
+                                    <span class="field-category__title">Sociology, Anthropology &amp; Cultural Studies</span>
+                                    <span class="field-category__cluster">Social formation</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Research on communities, institutions, practices, belief systems, social meanings, and cultural narratives surrounding UAP.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>How do communities construct, contest, and negotiate meanings of UAP?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Clear method such as ethnography, interview, discourse analysis, survey, or content analysis</li>
+                                        <li>Reflexive awareness of researcher position</li>
+                                        <li>Ethical engagement with participants</li>
+                                        <li>Source triangulation</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">08</span>
+                                    <span class="field-category__title">History of Science &amp; Archival Research</span>
+                                    <span class="field-category__cluster">History and archives</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Historical documentation of UAP investigation, institutional response, scientific paradigms, public perception, and archival record.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>How have institutions, investigators, and scientific cultures engaged with UAP over time?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Provenance of sources</li>
+                                        <li>Engagement with relevant historiography</li>
+                                        <li>Balanced interpretation and avoidance of presentism</li>
+                                        <li>Accurate citation and archiving</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">09</span>
+                                    <span class="field-category__title">Philosophy, Epistemology &amp; Methodology of UAP Studies</span>
+                                    <span class="field-category__cluster">Foundations</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Foundational analysis of evidence, inference, ontology, explanation, method, and disciplinary boundary conditions in UAP inquiry.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>What constitutes evidence for phenomena at disciplinary boundaries?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Engagement with mainstream philosophy of science or relevant philosophical literature</li>
+                                        <li>Logical coherence of argument</li>
+                                        <li>Clear distinction between epistemic, metaphysical, descriptive, and normative claims</li>
+                                        <li>Integration with ongoing methodological debates</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">10</span>
+                                    <span class="field-category__title">Policy, Law, Governance &amp; Ethics</span>
+                                    <span class="field-category__cluster">Governance and norms</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Legal, regulatory, policy, institutional, and ethical analysis of UAP research, disclosure, data governance, and public responsibility.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>How should information about UAP be governed, studied, and ethically disseminated?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Correct legal citation and jurisdictional framing</li>
+                                        <li>Clear normative argumentation</li>
+                                        <li>Stakeholder and conflict-of-interest analysis</li>
+                                        <li>Practical implications carefully bounded</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">11</span>
+                                    <span class="field-category__title">Security, Aviation Safety &amp; Risk</span>
+                                    <span class="field-category__cluster">Safety and risk</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Applied research on airspace safety, reporting systems, operational risk, hazard mitigation, and defense or security implications.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>How can UAP incidents inform safety protocols or risk governance without overstating the record?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Documented data sources and reliability assessment</li>
+                                        <li>Quantitative or clearly justified qualitative risk model</li>
+                                        <li>Operational relevance articulated cautiously</li>
+                                        <li>Responsible treatment of classified or sensitive information</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">12</span>
+                                    <span class="field-category__title">Education, Communication &amp; Public Understanding</span>
+                                    <span class="field-category__cluster">Public understanding</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Pedagogical, curricular, outreach, and communication strategies for teaching UAP science, culture, uncertainty, and evidence standards.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>How can public and academic discourse on UAP become more informed and disciplined?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Defined audience and learning or communication objectives</li>
+                                        <li>Evidence-based pedagogy or communication model</li>
+                                        <li>Assessment of outreach effectiveness where relevant</li>
+                                        <li>Ethical standards for public engagement</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">13</span>
+                                    <span class="field-category__title">Media, Information Science &amp; Digital Humanities</span>
+                                    <span class="field-category__cluster">Information and archives</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Computational, archival, information-theoretic, and media analyses of UAP discourse, collections, datasets, and digital publics.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>How is information about UAP produced, circulated, curated, preserved, or distorted?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Dataset or corpus description and licensing</li>
+                                        <li>Reproducible collection and computational methods</li>
+                                        <li>Coding, metadata, or preservation strategy</li>
+                                        <li>Bias and limitation analysis</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">14</span>
+                                    <span class="field-category__title">Reviews, Critical Notes &amp; Perspectives</span>
+                                    <span class="field-category__cluster">Synthesis and critique</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Synthesis of existing literature, targeted critical commentary, viewpoint essays, or concise scholarly interventions.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>What does current research reveal across domains, and where do disagreements or gaps remain?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Balanced representation of perspectives</li>
+                                        <li>Transparent scope or inclusion criteria for reviews</li>
+                                        <li>Contribution beyond summary through analysis, synthesis, or critique</li>
+                                        <li>Respectful, constructive scholarly tone</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">15</span>
+                                    <span class="field-category__title">Cultural, Artistic &amp; Ontological Explorations of UAP</span>
+                                    <span class="field-category__cluster">Humanities and meaning</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Humanities-based work on UAP in art, literature, film, religion, myth, aesthetics, metaphysics, symbolism, and ontology.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>How do UAP function as symbols, aesthetic experiences, religious or cultural forms, or ontological challenges?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Clear interpretive tradition such as hermeneutic, semiotic, aesthetic, theological, or comparative method</li>
+                                        <li>Engagement with primary sources or artistic works</li>
+                                        <li>Context within established humanities scholarship</li>
+                                        <li>Reflexivity about interpretive standpoint</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="field-category">
+                                <summary>
+                                    <span class="field-category__num">16</span>
+                                    <span class="field-category__title">Experiencer &amp; Encounter Studies</span>
+                                    <span class="field-category__cluster">Encounter and testimony</span>
+                                </summary>
+                                <div class="field-category__body">
+                                    <p class="field-category__description">Ethical, scholarly examination of encounter narratives, experiencer communities, anomalous contact claims, and first-person meaning-making.</p>
+                                    <p class="field-category__question"><span class="sr-only">Typical question: </span>What can systematic analysis of experiencer testimony reveal about perception, culture, consciousness, and meaning?</p>
+                                    <ul class="field-category__minimums" aria-label="Public-facing readiness markers">
+                                        <li>Informed consent, anonymization, and privacy protection</li>
+                                        <li>Compliance with applicable SUAPS experiencer policy</li>
+                                        <li>Transparent qualitative methodology</li>
+                                        <li>Non-endorsing, non-dismissive interpretive tone</li>
+                                        <li>Clear boundaries between testimony, interpretation, evidence, and speculation</li>
+                                    </ul>
+                                </div>
+                            </details>
+                    </div>
+                </div>
+
+                <div class="principles-panel" aria-label="Cross-cutting editorial principles">
+                    <div class="principles-panel__head">
+                        <h3>Universal editorial principles across every category.</h3>
+                        <p>Whatever the discipline, Limina expects transparency about sources, method, evidence, ethical status, and the limits of what the manuscript can responsibly claim.</p>
+                    </div>
+                    <div class="principle-grid">
+                        <article class="principle-card"><div class="principle-card__title">Integrity &amp; Transparency</div><p>Disclose data provenance, software or AI assistance, funding, conflicts, and relevant constraints.</p></article>
+                        <article class="principle-card"><div class="principle-card__title">Claims Discipline</div><p>Conclusions should not exceed the evidentiary reach of the data, argument, or method.</p></article>
+                        <article class="principle-card"><div class="principle-card__title">Methodological Fit</div><p>The method and the claim should inhabit the same logical domain: empirical, interpretive, conceptual, or hybrid.</p></article>
+                        <article class="principle-card"><div class="principle-card__title">Reproducibility / Traceability</div><p>Provide enough detail for independent verification, evaluation, reconstruction, or critical assessment.</p></article>
+                        <article class="principle-card"><div class="principle-card__title">Ethical Conduct</div><p>Respect human subjects, sensitive materials, privacy, consent, and relevant publication-ethics norms.</p></article>
+                        <article class="principle-card"><div class="principle-card__title">Respectful Scholarly Tone</div><p>Avoid ridicule, sensationalism, and unsupported insinuation; criticism should be constructive and precise.</p></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section section--cream" id="process">
+            <div class="container">
+                <p class="section__label">Editorial Process</p>
+                <h2 class="section__title">How manuscripts move from submission to decision.</h2>
+                <p class="section__lead">Limina uses double-blind peer review. The sequence below keeps the original process language intact while making each editorial stage easy to scan.</p>
+<div class="process-list">
+  <article class="process-step">
+    <span class="process-step__num">01</span>
+    <p>Limina employs a rigorous double-blind academic review process. Therefore the identity of both author and reviewer is kept hidden from each. In this way the reviewer cannot form any particular view about the author of a work, and so may proceed to evaluate it on its own internal merits.  Authors are therefore strongly advised to remove all identifying features from their paper in order to better ensure the integrity of the double-blind process.</p>
+  </article>
+  <article class="process-step">
+    <span class="process-step__num">02</span>
+    <p>Upon receipt of an article submitted to Limina, the editor-in-chief, in consultation with the associate editor, will (by an initial read of the work) determine if the work meets the general criteria of publication at Limina, meaning they will determine whether the article at least falls within the scope of the journal.</p>
+  </article>
+  <article class="process-step">
+    <span class="process-step__num">03</span>
+    <p>If the managing editors determine that the article falls within the scope of the journal, they will then distribute the article to the staff editor whose expertise best matches the field of study within which the article is conceived. This reader will determine whether the submission holds itself to the highest standards of academic scholarship, clarity of writing and conception. They will also determine if the article is of sufficient merit to warrant formal peer review by Limina. The article may be rejected at this point.</p>
+  </article>
+  <article class="process-step">
+    <span class="process-step__num">04</span>
+    <p>Should the article be deemed admissible to Limina and of sufficient merit to warrant formal review, the submission is then distributed by the relevant editorial board member(s) to the appropriate set of referees/reviewers of their choosing. At least two, possibly three or even up to four, referees will be selected by the relevant Editorial Board member (who will then act in a supervisory role, overseeing the process for the article being reviewed).</p>
+  </article>
+  <article class="process-step">
+    <span class="process-step__num">05</span>
+    <p>Referees will then decide on the relative merits and outstanding problems of the paper, and submit a report back to the supervisory editors with any one of the following recommendations: (1) accept without revision; (2) accept but revise with minor changes; (3) revise with major changes and resubmit; (4) reject.</p>
+  </article>
+  <article class="process-step">
+    <span class="process-step__num">06</span>
+    <p>Communication of the decision of the referees (reject, revise and resubmit, etc.) to authors should occur within six to eight weeks following acknowledgment of submission into Limina by the chief editor.</p>
+  </article>
+  <article class="process-step">
+    <span class="process-step__num">07</span>
+    <p>Final publication in Limina is at the ultimate discretion of the chief and associate editors, with significant input possibly from the Editorial Board as a whole, and is also conditional upon the positive acceptance of the referees after all required or relevant revisions have been satisfactorily completed.</p>
+  </article>
+</div>
+            </div>
+        </section>
+
+        <section class="section section--dark" id="revisions">
+            <div class="container">
+                <p class="section__label">Revisions &amp; Rejections</p>
+                <h2 class="section__title">Revision is expected; clarity and scholarly discipline still matter.</h2>
+                <p class="section__lead">The guidance below preserves Limina’s stated revision and rejection standards, including the journal’s discretion to reject at any point when revisions are inadequate.</p>
+<div class="two-col two-col--2-3">
+<div class="prose prose--light">
+  <p>Typically, articles that are granted consideration are not immediately accepted after an initial reading by reviewers. Authors are usually asked to make certain revisions at various stages in the review process.</p>
+  <p>However, in certain cases, a reviewer might reject the work outright, in which case the chief and associate editors will determine if such rejection is truly merited, and, if so, construct a clear and concise response to the author communicating the rejection and the reasons given for it.</p>
+  <p>Where a paper can be improved, either slightly or significantly, such will be communicated to the author by the editors in charge of the paper in a timely manner. After revisions, the editors will determine if the referee&#x27;s comments have been adequately addressed, or if further review is warranted (in which case another round of referee work will be initiated).</p>
+  <p>In all circumstances, Limina reserves the right to reject any submission at any stage of the review process should the relevant revisions be addressed poorly or otherwise inadequately. Again, the final determination for publication decisions rests with the Editor-In-Chief and the Associate Editor.</p>
+</div>
+<div class="reasons-card">
+<p class="mini-label">Common reasons for rejection include but are not limited to:</p>
+<ul class="reasons-list">
+<li>the argument of the paper is not presented in a sensible or logical order, or is otherwise unclear</li>
+<li>the argument of the paper is simply, on its own merits, not cogent or it has not been properly supported by the relevant evidence</li>
+<li>there is a lack of sound theoretical basis for the paper&#x27;s argument(s), and/or the evidence and facts presented in the paper are done so without proper argumentation or analysis</li>
+</ul>
+<div class="reasons-note">
+<p>It should also be noted that papers submitted to Limina should not require major editing in terms of the basics like spelling, grammar, style, etc., and so it is conceivable that a paper might be rejected just because of these factors alone, irrespective of the content of the paper.</p>
+</div>
+</div>
+</div>
+            </div>
+        </section>
+
+        <section class="section section--navy" id="types">
+            <div class="container">
+                <p class="section__label">Submission Types &amp; Guide for Authors</p>
+                <h2 class="section__title">Choose the form that fits the work.</h2>
+<div class="prose prose--light">
+  <p>The following is a detailed description of each submission type that Limina will accept. Authors should consult this list prior to submitting their manuscript, and should also treat it as a detailed stylistic and content guide in the composition of the work they intend to be considered by Limina&#x27;s editors. Failure to adhere to these general guidelines is grounds for immediate rejection of the manuscript (without a more detailed review of the work itself).</p>
+</div>
+<div class="type-index" aria-label="Submission type index">
+<a class="type-tile" href="#research-articles" data-open-type="research-articles">
+  <span class="type-tile__num">01</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Original research</span>
+    <span class="type-tile__title">Research Articles</span>
+    <span class="type-tile__desc">Original studies for the sciences, humanities, social sciences, or interdisciplinary UAP studies.</span>
+  </span>
+</a>
+<a class="type-tile" href="#essays" data-open-type="essays">
+  <span class="type-tile__num">02</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Critical essay</span>
+    <span class="type-tile__title">Essays</span>
+    <span class="type-tile__desc">Interpretive, critical, or interdisciplinary work that contributes to scholarly discourse.</span>
+  </span>
+</a>
+<a class="type-tile" href="#analysis" data-open-type="analysis">
+  <span class="type-tile__num">03</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Analytical synthesis</span>
+    <span class="type-tile__title">Analysis</span>
+    <span class="type-tile__desc">Critical examination and interpretation of existing research, theories, data, or debates.</span>
+  </span>
+</a>
+<a class="type-tile" href="#review" data-open-type="review">
+  <span class="type-tile__num">04</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Literature review</span>
+    <span class="type-tile__title">Review</span>
+    <span class="type-tile__desc">Comprehensive synthesis and evaluation of the current state of knowledge.</span>
+  </span>
+</a>
+<a class="type-tile" href="#new-methodology" data-open-type="new-methodology">
+  <span class="type-tile__num">05</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Method development</span>
+    <span class="type-tile__title">New Methodology</span>
+    <span class="type-tile__desc">New approaches, techniques, instruments, workflows, or frameworks for UAP studies.</span>
+  </span>
+</a>
+<a class="type-tile" href="#contradictory-confirming-results" data-open-type="contradictory-confirming-results">
+  <span class="type-tile__num">06</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Replication and contrast</span>
+    <span class="type-tile__title">Contradictory or Confirming Results</span>
+    <span class="type-tile__desc">Findings that challenge, complicate, validate, or strengthen existing results or hypotheses.</span>
+  </span>
+</a>
+<a class="type-tile" href="#uap-incident-report" data-open-type="uap-incident-report">
+  <span class="type-tile__num">07</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Incident research</span>
+    <span class="type-tile__title">UAP Incident Report</span>
+    <span class="type-tile__desc">Original investigation and analysis of UAP incidents, with attention to phenomenological characteristics.</span>
+  </span>
+</a>
+<a class="type-tile" href="#perspective" data-open-type="perspective">
+  <span class="type-tile__num">08</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Viewpoint</span>
+    <span class="type-tile__title">Perspective</span>
+    <span class="type-tile__desc">Expert argument, commentary, or interpretation on a significant issue in the field.</span>
+  </span>
+</a>
+<a class="type-tile" href="#correspondence" data-open-type="correspondence">
+  <span class="type-tile__num">09</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Scholarly exchange</span>
+    <span class="type-tile__title">Correspondence or Letters to the Editor</span>
+    <span class="type-tile__desc">Concise letters responding to published work or raising focused points for discussion.</span>
+  </span>
+</a>
+<a class="type-tile" href="#conference-report" data-open-type="conference-report">
+  <span class="type-tile__num">10</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Event report</span>
+    <span class="type-tile__title">Conference or Meeting Report</span>
+    <span class="type-tile__desc">Summary and analysis of conferences, symposia, workshops, or scholarly meetings.</span>
+  </span>
+</a>
+<a class="type-tile" href="#book-reviews" data-open-type="book-reviews">
+  <span class="type-tile__num">11</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Book review</span>
+    <span class="type-tile__title">Book Reviews</span>
+    <span class="type-tile__desc">Critical evaluation of books relevant to UAP studies and adjacent academic fields.</span>
+  </span>
+</a>
+<a class="type-tile" href="#critical-notice" data-open-type="critical-notice">
+  <span class="type-tile__num">12</span>
+  <span class="type-tile__content">
+    <span class="type-tile__label">Critical notice</span>
+    <span class="type-tile__title">Critical Notice</span>
+    <span class="type-tile__desc">Evidence-based response to a published Limina research article or essay.</span>
+  </span>
+</a>
+</div>
+            </div>
+        </section>
+
+        <section class="section section--light" id="guide">
+            <div class="container">
+                <p class="section__label">Complete guide for authors</p>
+                <h2 class="section__title">Full requirements by submission type.</h2>
+                <p class="section__lead">Each block opens to show the full exposition and requirements for that submission type. This structure preserves the detailed guidance without forcing readers through a long unbroken page.</p>
+                <div class="guide-tools" aria-label="Guide controls">
+                    <button class="tool-button" type="button" data-expand-all>Expand all</button>
+                    <button class="tool-button" type="button" data-collapse-all>Collapse all</button>
+                </div>
+<div class="type-accordion" id="full-guide">
+<details class="submission-type" id="research-articles">
+  <summary>
+    <span class="summary-num">01</span>
+    <span class="summary-main">
+      <span class="summary-label">Original research</span>
+      <span class="summary-title">Research Articles</span>
+      <span class="summary-desc">Original studies for the sciences, humanities, social sciences, or interdisciplinary UAP studies.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>A research article presents the findings of a research study conducted by the author(s) of the paper. It serves as a means of communicating original research to the academic community. Research articles are considered one of the primary sources of knowledge in various fields and are essential for advancing understanding in the sciences, humanities and social &amp; human sciences.</p>
+  <p>The exact formatting of a research article in Limina can vary depending on what community of scholars (in the humanities, in STEM or the social and human sciences) for which the article is primarily intended. Nonetheless, there are some common elements and sections that should be included in most research articles submitted to Limina. Here is a general outline of the formatting and sections that will be expected from authors of original research articles:</p>
+  <p class="requirement-line">Title: The title should accurately and concisely describe the research study&#x27;s topic and main focus.</p>
+  <p class="requirement-line">Abstract: The abstract should be a brief summary of the research article, providing a concise overview of the study&#x27;s objectives, methods, results, and conclusions. The abstract should be limited to no more than 300 words.</p>
+  <p class="requirement-line">Introduction: The introduction should provide the necessary background information and context for the research study. It should outline the research problem, states the research objectives or questions, and reviews relevant existing literature or theories. The introduction aims to justify the significance and relevance of the research.</p>
+  <p class="requirement-line">Literature Review: The literature review section critically evaluates existing research and scholarly works related to the research topic. It identifies gaps, controversies, or inconsistencies in the literature and highlights the need for the current study being submitted to Limina. The literature review also helps to establish the theoretical framework or conceptual basis for the research.</p>
+  <p class="requirement-line">Methods: The methods section describes in detail how the research study was conducted. It should include information on the study design, data collection procedures, sample size and selection criteria, instrumentation or measures used, and any statistical or analytical techniques employed. The methods section should provide sufficient detail for other researchers to replicate the study. (Note: a &quot;methods&quot; section is not necessarily relevant for research articles in the humanities.)</p>
+  <p class="requirement-line">Results: The results section presents the findings of the research study. It typically includes tables, graphs, or figures to illustrate the data. The results should be reported objectively and accurately, with appropriate statistical analysis and interpretation. Raw data is usually not included but should be made be available upon request.</p>
+  <p class="requirement-line">Discussion: The discussion section interprets and analyzes the results in the context of the research objectives and relevant literature. It explores the implications of the findings, compares them to previous research, and discusses any limitations or weaknesses of the study. The discussion may also suggest future research directions and provide recommendations based on the study&#x27;s outcomes.</p>
+  <p class="requirement-line">Conclusion: The conclusion section summarizes the main findings of the study and restates their significance. It should be concise and avoid introducing new information or arguments not previously discussed.</p>
+  <p class="requirement-line">References: The references section lists all the sources cited in the research article, and should generally follow the &quot;Chicago&quot; style. Each reference entry should include the authors&#x27; names, publication year, title, journal or book title, volume or edition, and page numbers.</p>
+  <p>In addition to these sections, some research articles may include supplementary materials, acknowledgments, or appendices. For more technical articles submitted to Limina, we ask that all calculations and other highly technical details (which are appropriate for the expert reader) be included as a separate appendix found at the end of the article.</p>
+</div>
+  </div>
+</details>
+<details class="submission-type" id="essays">
+  <summary>
+    <span class="summary-num">02</span>
+    <span class="summary-main">
+      <span class="summary-label">Critical essay</span>
+      <span class="summary-title">Essays</span>
+      <span class="summary-desc">Interpretive, critical, or interdisciplinary work that contributes to scholarly discourse.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>Essays differ from strict research articles, which often are of a scientific kind. A non-scientific essay article is a type of academic writing that explores a specific topic from a subjective or interdisciplinary perspective. Unlike scientific articles, which adhere to a rigorous research methodology and present empirical data, non-scientific essay articles focus on providing critical analysis, interpretation, or personal insights on a subject of interest. These articles offer a platform for scholars to engage in broader discussions, address societal or cultural issues, or present innovative ideas.</p>
+  <p>Here is a detailed description of the key elements and components that will be expected from essays submitted to Limina:</p>
+  <p class="requirement-line">Title: The article should have a clear and compelling title that reflects the content and scope of the work. The title should capture the reader&#x27;s attention and provide a preview of the article&#x27;s main theme or argument.</p>
+  <p class="requirement-line">Abstract: An abstract summarizing the main ideas, arguments, and implications of the article should be provided. The abstract should be no more than 300 words and provide a concise overview of the article&#x27;s key points.</p>
+  <p class="requirement-line">Introduction: This section should introduce the topic or issue under discussion in the essay, and provide the necessary background information, and should set the context for the essay as a whole. It may present the author&#x27;s motivation for exploring the subject and outline the main objectives or questions addressed in the article.</p>
+  <p class="requirement-line">Body: The body of the essay should present the author&#x27;s analysis, interpretation, or critical discussion of the topic. It should be divided into coherent sections or paragraphs, each focusing on a specific aspect or argument. The body may include personal anecdotes, examples, case studies, or references to relevant literature or cultural phenomena to support the author&#x27;s points. The arguments and analysis should be logically structured and presented in a clear and engaging manner.</p>
+  <p class="requirement-line">Interdisciplinary Perspective: Non-scientific essay articles in Limina should consider adopting an interdisciplinary approach, drawing insights and theories from multiple disciplines to explore their subject comprehensively. Authors may therefore incorporate perspectives from the humanities, social sciences, arts, or other relevant fields to enrich their analysis and present a broader understanding of the topic.</p>
+  <p class="requirement-line">Critical Analysis and Interpretation: The article should engage in critical analysis and interpretation of the subject matter. Authors may present their unique viewpoints, challenge prevailing assumptions or ideologies, or offer alternative perspectives. The analysis should be well-supported with logical reasoning, evidence, or references to relevant scholarly works.</p>
+  <p class="requirement-line">Engagement with Existing Scholarship: Although non-scientific essay articles may not adhere to a strict scientific methodology, they should engage with existing scholarship in the relevant field(s). Authors should demonstrate familiarity with relevant theories, concepts, or debates and situate their own analysis within the broader academic discourse.</p>
+  <p class="requirement-line">Conclusion: The conclusion section summarizes the main arguments, insights, or implications of the article. It may restate the main thesis or central theme and provide a thoughtful reflection on the significance of the findings or analysis. The conclusion should not introduce new information but rather reinforce the main points and leave readers with a clear takeaway or invitation for further reflection or discussion.</p>
+  <p class="requirement-line">References: Essay articles should include a list of references or citations following the &quot;Chicago&quot; style.</p>
+  <p>Overall, a non-scientific essay article in Limina offers scholars a platform to present their critical analysis, interpretation, or personal insights on a specific topic. It encourages interdisciplinary perspectives, engages with existing scholarship, and contributes to broader academic discourse.</p>
+</div>
+  </div>
+</details>
+<details class="submission-type" id="analysis">
+  <summary>
+    <span class="summary-num">03</span>
+    <span class="summary-main">
+      <span class="summary-label">Analytical synthesis</span>
+      <span class="summary-title">Analysis</span>
+      <span class="summary-desc">Critical examination and interpretation of existing research, theories, data, or debates.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>An analysis article is a type of scholarly paper that focuses on critically examining and interpreting existing research, theories, or data within a specific field or topic. Unlike a research article, which presents original research findings, an analysis article synthesizes and evaluates existing information to provide insights, interpretations, or critiques.</p>
+  <p>The purpose of an analysis article is to contribute to the academic discourse by offering a new perspective, a deeper understanding, or a novel synthesis of existing knowledge. It often targets a specific research question or problem and provides a comprehensive analysis of relevant literature, theories, or data to address that question or problem. The article should demonstrate the author&#x27;s expertise in the field and their ability to analyze, synthesize, and evaluate scholarly work.</p>
+  <p>Here is a detailed description of the key elements and components we expect to be found in an analysis article:</p>
+  <p class="requirement-line">Title: The title should accurately reflect the focus and scope of the analysis article.</p>
+  <p class="requirement-line">Abstract: The abstract should provide a concise summary of the main objectives, methods, key findings, and conclusions of the analysis. It should help readers quickly assess the relevance and significance of the article.</p>
+  <p class="requirement-line">Introduction: The introduction section should outline the purpose of the analysis article and clearly state the research question or problem being addressed. It provides a brief background and context for the topic and explains why the analysis is necessary.</p>
+  <p class="requirement-line">Literature Review: The literature review in an analysis article serves a different purpose compared to that in a research article. It focuses on critically evaluating and synthesizing existing literature, theories, or empirical studies related to the research question or problem. The review should highlight the main concepts, debates, gaps, or limitations in the literature and set the stage for the analysis that follows.</p>
+  <p class="requirement-line">Methodology (if applicable): Depending on the nature of the analysis article, a methodology section may be included. This section should explain the approach or methods used to gather and analyze the existing literature, theories, or data. It should provide enough detail for readers to understand the analytical framework or techniques employed.</p>
+  <p class="requirement-line">Analysis and Interpretation: The core of an analysis article lies in the analysis and interpretation of the relevant literature, theories, or data. This section should present a well-structured and logical analysis, discussing the key findings, patterns, themes, or relationships that emerge from the analysis. The author should critically evaluate the strengths and weaknesses of the existing research or theories and offer insights or interpretations based on their analysis.</p>
+  <p class="requirement-line">Discussion: The discussion section allows the author to delve deeper into the implications of the analysis. It provides a space to explore the broader significance and potential applications of the findings. The author may compare and contrast different viewpoints, theories, or approaches, and discuss the implications of their analysis for the field or future research directions.</p>
+  <p class="requirement-line">Conclusion: The conclusion section summarizes the main findings and insights of the analysis article. It restates the significance of the analysis and highlights its contributions to the existing body of knowledge. The author may also identify any limitations or areas for further investigation.</p>
+  <p class="requirement-line">References: The references section lists all the sources cited in the analysis article. It follows the &quot;Chicago&quot; style, and should be consistent with the Limina&#x27;s general guidelines.</p>
+  <p>Overall, an analysis article should demonstrate a thorough examination and synthesis of existing literature, theories, or data, along with critical thinking and original insights that contribute to the scholarly conversation in the field.</p>
+</div>
+  </div>
+</details>
+<details class="submission-type" id="review">
+  <summary>
+    <span class="summary-num">04</span>
+    <span class="summary-main">
+      <span class="summary-label">Literature review</span>
+      <span class="summary-title">Review</span>
+      <span class="summary-desc">Comprehensive synthesis and evaluation of the current state of knowledge.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>A review article for an academic journal is a comprehensive and critical evaluation of existing research, theories, or literature on a specific topic or research question. Unlike research articles or analysis articles, which present original research or analyze existing work, a review article aims to summarize, synthesize, and evaluate the state of knowledge within a particular field or subject area.</p>
+  <p>The purpose of a review article is to provide readers with a thorough understanding of the current state of research, identify gaps or controversies in the literature, and offer insights or recommendations for future research. Review articles play a crucial role in synthesizing existing knowledge, clarifying concepts, and guiding researchers, practitioners, or policymakers in a specific field.</p>
+  <p>Here is a detailed description of the key elements and components typically found in a review article:</p>
+  <p class="requirement-line">Title: The title should accurately reflect the focus and scope of the review article.</p>
+  <p class="requirement-line">Abstract: The abstract should provide a concise summary of the main objectives, methods, key findings, and conclusions of the review. It allows readers to quickly assess the relevance and significance of the article.</p>
+  <p class="requirement-line">Introduction: The introduction section establishes the context and rationale for the review article. It should clearly state the purpose of the review, the research question or problem being addressed, and the significance of the topic. The introduction may also provide a brief overview of the key concepts or theories that will be discussed in the review.</p>
+  <p class="requirement-line">Scope and Methodology: The scope and methodology section explains the criteria for selecting the articles or studies included in the review. It should outline the search strategy, databases used, inclusion and exclusion criteria, and any specific protocols followed. This section ensures transparency and reproducibility of the review process.</p>
+  <p class="requirement-line">Literature Review: The literature review section constitutes the core of the review article. It involves a comprehensive and systematic examination of existing literature, theories, or empirical studies relevant to the research question or topic. The review should summarize and synthesize the main findings, theories, or concepts from the selected sources. It may organize the literature thematically, chronologically, or conceptually, depending on the nature of the topic.</p>
+  <p class="requirement-line">Critical Evaluation: A crucial aspect of a review article is the critical evaluation of the reviewed literature. The author should analyze the strengths and weaknesses of the individual studies or theories, assess the quality and reliability of the evidence presented, and identify any gaps, inconsistencies, or controversies in the literature. Critical evaluation allows the author to provide a nuanced understanding of the state of knowledge and identify areas for further research or improvement.</p>
+  <p class="requirement-line">Discussion: The discussion section provides a comprehensive synthesis of the main themes, patterns, or conclusions that emerge from the reviewed literature. It should highlight the major findings or theories, outline the key debates or controversies, and offer insights or interpretations. The discussion may also present alternative perspectives, identify areas of consensus, or propose theoretical or practical implications based on the review.</p>
+  <p class="requirement-line">Conclusion: The conclusion section should summarize the main findings and insights of the review article. It restates the significance of the review and its contributions to the existing body of knowledge. The author may also identify limitations or challenges in the reviewed literature and suggest future research directions.</p>
+  <p class="requirement-line">References: The references section should list all the sources cited in the review article, and should generally follow the &quot;Chicago&quot; style, and should be consistent with the journal&#x27;s guidelines.</p>
+  <p>Overall, a review article should provide a comprehensive and critical overview of existing research, theories, or literature on a specific topic. It should offer a synthesis of knowledge, highlight gaps or controversies, and provide insights or recommendations for future research in the field.</p>
+</div>
+  </div>
+</details>
+<details class="submission-type" id="new-methodology">
+  <summary>
+    <span class="summary-num">05</span>
+    <span class="summary-main">
+      <span class="summary-label">Method development</span>
+      <span class="summary-title">New Methodology</span>
+      <span class="summary-desc">New approaches, techniques, instruments, workflows, or frameworks for UAP studies.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>This category welcomes submissions that showcase innovative and cutting-edge approaches, techniques or frameworks that could contribute to the advancement of UAP studies. This article type provides a platform for researchers to present novel methodologies that can enhance research practices, improve data analysis, or contribute to theoretical developments.</p>
+  <p>Submissions under the &quot;New Methodology&quot; category should clearly describe the unique methodology being proposed, along with its potential applications and benefits. The article should provide a comprehensive overview of the methodology, including its underlying principles, technical details, and any necessary validation or testing procedures. Additionally, authors should highlight the advantages, limitations, and potential implications of the proposed methodology. Here is a general outline:</p>
+  <p class="requirement-line">Title: Choose a title that accurately reflects the nature and concept of the novel methodology. Ensure that it is concise, informative and engaging.</p>
+  <p class="requirement-line">Abstract: Authors should write a summary of the methodology (300 words max), by providing a concise overview of its key elements. These should include the objectives, main methods employed, and potential applications of the proposed methodology. Authors should highlight the unique contributions and benefits of the methodology to UAP studies.</p>
+  <p class="requirement-line">Introduction: This section should start with a concise background and context for the need of the new methodology in UAP studies, following by an explanation of the limitations or gaps in existing methodologies that the proposed methodology aims to address. Authors should clearly state the objectives and research questions that the new methodology seeks to answer.</p>
+  <p class="requirement-line">Methodology: Authors are encouraged to describe the step-by-step process or workflow of the proposed methodology. They should present the underlying principles, theoretical frameworks, or innovative concepts on which the methodology is based. Provide technical details, including specific tools, instruments, or software used in the implementation of the methodology. If applicable, authors should outline any unique data collection, analysis, or interpretation techniques employed in the methodology. Adequate validation and testing is important, as it will define the reliability, robustness, and reproducibility of the proposed methodology.</p>
+  <p class="requirement-line">Advantages, limitations, and implications: In this section, authors should discuss the advantages and strengths of the proposed methodology compared to existing approaches. This can be done by rigorously addressing the limitations or potential challenges that may arise when applying the methodology. We encourage authors to discuss the broader implications of adopting the new methodology in UAP studies, including its potential impact on future research, theory-building, or practical applications.</p>
+  <p class="requirement-line">Conclusion: in this section, authors should summarize the main findings and contributions of the new methodology by emphasizing the significance of the methodology in advancing UAP studies and how it fills existing gaps. Prospective authors can also suggest directions for further research or improvements to the methodology.</p>
+  <p class="requirement-line">References: New methodology articles should include a list of references that follow the &quot;Chicago&quot; style.</p>
+  <p>Overall, a “New Methodology” article should introduce novel approaches or frameworks not previously explored in the field, and contain enough information so that future researchers can adopt and/or replicate the proposed methodology in their own studies. The article should provide a clear and comprehensive understanding of the methodology, allowing readers to assess its validity and potential applications.</p>
+</div>
+  </div>
+</details>
+<details class="submission-type" id="contradictory-confirming-results">
+  <summary>
+    <span class="summary-num">06</span>
+    <span class="summary-main">
+      <span class="summary-label">Replication and contrast</span>
+      <span class="summary-title">Contradictory or Confirming Results</span>
+      <span class="summary-desc">Findings that challenge, complicate, validate, or strengthen existing results or hypotheses.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>This category welcomes submissions that present contradictory or confirming results in order to either challenge existing theories and hypotheses or provide additional support for previously reported results. Submissions under the &quot;Contradictory Results or Confirming Results&quot; category should provide a comprehensive overview of the research conducted, including the objectives, methodology, and data analysis procedures.</p>
+  <p>For contradictory results, authors should critically analyze the potential reasons behind the discrepancies and discuss the implications for the field. For articles presenting confirming results, authors should highlight the significance of their findings in validating or strengthening existing theories or hypotheses.</p>
+  <p>Here is a general outline for articles in this category:</p>
+  <p class="requirement-line">Title: the title should accurately reflect the nature of the contradictory or confirming results presented in the article.</p>
+  <p class="requirement-line">Abstract: authors should provide a concise summary of the research (300 words max), by highlighting the key objectives, methodology, and main findings. Here it is important to clearly indicate whether the results contradict or confirm existing theories or hypotheses and briefly comment the implications of the findings.</p>
+  <p class="requirement-line">Introduction: introduction should begin with a brief background and context for the research topic, including an overview of the existing theories or hypotheses being addressed. This should be followed by clearly stating the objectives of the study and outline the research questions. Authors should also stress the significance of presenting their contradictory or confirming results.</p>
+  <p class="requirement-line">Methodology: Methods should contain a description of the research design, data collection methods, analysis and techniques employed in the study and statistical methodology used. This section should contain sufficient details for the audience to understand the rigor and reliability of the research process presented by the authors.</p>
+  <p class="requirement-line">Results: Present the findings of the study, either contradictory or confirming, in a clear and concise manner. Include appropriate statistical analyses or qualitative evidence to support the results, showcased by visuals such as figures or tables to enhance the presentation of the findings.</p>
+  <p class="requirement-line">Discussion: Rigorously address and discuss the implications of the results within the context of existing theories or hypotheses. For articles presenting contradictory results, critically evaluate potential reasons for the discrepancies and discuss their significance. For articles presenting confirming results, highlight the contributions of the findings to the field and discuss their implications for future research.</p>
+  <p class="requirement-line">Conclusion: Summarize the main findings of the study and emphasize their importance in contributing to the knowledge in UAP studies. Discuss any limitations of the study and propose recommendations for future research to address these limitations or explore further avenues.</p>
+  <p class="requirement-line">References: Include a list of references that follow the &quot;Chicago&quot; style.</p>
+  <p>Overall, articles in the &quot;Contradictory Results or Confirming Results&quot; category should provide a balanced and objective presentation of findings that should encourage critical thinking, offer insights into unresolved questions by challenging existing paradigms or providing further validation, and stimulate further research in the field.</p>
+</div>
+  </div>
+</details>
+<details class="submission-type" id="uap-incident-report">
+  <summary>
+    <span class="summary-num">07</span>
+    <span class="summary-main">
+      <span class="summary-label">Incident research</span>
+      <span class="summary-title">UAP Incident Report</span>
+      <span class="summary-desc">Original investigation and analysis of UAP incidents, with attention to phenomenological characteristics.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>This type of submission to Limina should contain descriptions of and references pertaining to particular phenomenological characteristics of the UAP which forms the basis of the incident report. The author should not be merely repeating research, analysis or reporting done by someone else, but rather should be communicating original research and analysis they have themselves done to create the incident report. (In other words, we are not here interested in the simple documentation of a UAP incident, but a more detailed investigation documenting all of the relevant facts, with special attention to the phenomenology involved.)</p>
+  <p>Besides containing a description of the specific phenomenological characteristics presented during the course of a UAP incident as documented in the report, an author of this type of submission might also consider conducting more detailed phenomenological analysis of the mode of presentation of the UAP in the report. In this case, the article might be conceived as an original research article in phenomenological analysis of UAP. This might involve applying a specific phenomenological research approach (as understood in contemporary philosophy, for example) in order to investigate and describe the lived experiences and perceptions of individuals involved in UAP sightings or encounters. The phenomenology then would focus on understanding and describing the essence of human experiences as they are subjectively lived and perceived by individuals. Otherwise, this report could supply a suitably detailed and sophisticated analysis, employing a well-chosen phenomenological method, of how the UAP appeared to the relevant witnesses.</p>
+  <p>Here is a detailed description of the key elements that should be found in a report on UAP incidents, with special emphasis on the phenomenological aspects of the incident:</p>
+  <p class="requirement-line">Title: The title should accurately reflect the focus and scope of the phenomenological report, incorporating keywords related to UAP incidents and phenomenology.</p>
+  <p class="requirement-line">Abstract: The abstract should provide a concise summary of the main objectives, methods, key findings, and conclusions of the phenomenological study. It should highlight the significance of investigating the subjective experiences of individuals encountering UAP incidents (if applicable to the study).</p>
+  <p class="requirement-line">Introduction: The introduction section sets the stage for the phenomenological report, explaining the rationale and significance of applying phenomenology to UAP incidents. It should provide a brief overview of UAP phenomena, the existing literature or theories, and the research question or objective of the study.</p>
+  <p class="requirement-line">Phenomenological Approach: This section outlines the specific phenomenological approach adopted in the study. It may discuss the philosophical underpinnings of phenomenology and should describe the methodology employed, such as a descriptive or interpretative phenomenological analysis. Whenever appropriate, it is essential to explain how the chosen approach allows for the exploration and understanding of the subjective experiences related to UAP incidents.</p>
+  <p class="requirement-line">Participants: Describe the participants involved in the UAP incident, including their demographic characteristics and selection criteria. Protecting participants&#x27; anonymity and privacy should be emphasized (unless those involved in the incident have explicitly consented to have their names disclosed).</p>
+  <p class="requirement-line">Data Collection: Explain the methods used to collect data in the phenomenological study. This may include interviews or any other techniques aimed at eliciting rich descriptions of the participants&#x27; experiences with the UAP incidents found in the report. Describe the procedures followed, the guiding questions or prompts, and any measures taken to ensure rigor and validity.</p>
+  <p class="requirement-line">Data Analysis: Describe the process of analyzing the collected data. Phenomenological analysis involves a detailed examination of the interview transcripts or other sources of data to identify themes, patterns, or structures that capture the essence of participants&#x27; experiences or the phenomenological characteristics of the UAP encountered. Explain the steps taken in coding, categorizing, and interpreting the data, ensuring transparency and rigor in the analysis.</p>
+  <p class="requirement-line">Findings: Present the key findings of the phenomenological analysis. This section should focus on the themes or essential structures that emerged from the analysis, describing participants&#x27; subjective experiences, perceptions, emotions, and meanings associated with UAP incidents (where appropriate and possible). Illustrative quotes or narratives from participants can be included to provide rich descriptions and support the findings.</p>
+  <p class="requirement-line">Discussion: Discuss and interpret the findings in the context of existing literature or theories related to UAP incidents. Explore the implications and significance of the findings for the understanding of UAP phenomena, human experiences, and potential avenues for future research. Consider any limitations or challenges faced during the study and how they may have influenced the findings.</p>
+  <p class="requirement-line">Conclusion: Summarize the main findings and insights derived from the phenomenological study on UAP incidents. Highlight the contributions of the study to the understanding of subjective experiences related to UAP phenomena and their potential implications for various domains, such as psychology, anthropology, or UAP studies more broadly. Address any implications for policy, practice, or further research.</p>
+  <p class="requirement-line">References: The references section lists all the sources cited in the phenomenological report, generally following the &quot;Chicago&quot; style. Ensure accurate and consistent formatting of references according to the journal&#x27;s guidelines.</p>
+</div>
+  </div>
+</details>
+<details class="submission-type" id="perspective">
+  <summary>
+    <span class="summary-num">08</span>
+    <span class="summary-main">
+      <span class="summary-label">Viewpoint</span>
+      <span class="summary-title">Perspective</span>
+      <span class="summary-desc">Expert argument, commentary, or interpretation on a significant issue in the field.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>A perspective article, also known as an opinion article or viewpoint article, is a type of scholarly paper published in an academic journal that presents the author&#x27;s perspective, opinion, or commentary on a specific topic or issue of significance in their field of expertise. Unlike research articles or review articles, which focus on presenting empirical data or synthesizing existing literature, a perspective article allows authors to express their viewpoints, insights, and arguments based on their expertise and experience.</p>
+  <p>Here is a detailed description of the key elements and components generally required by Limina for a perspective article:</p>
+  <p class="requirement-line">Title: The title should accurately reflect the focus and scope of the perspective article, conveying the author&#x27;s viewpoint or argument.</p>
+  <p class="requirement-line">Abstract: Perspective articles in Limina should include an abstract (of no more than 300 words), which provides a concise summary of the main objective or argument of the article. However, this may vary depending on the journal&#x27;s guidelines.</p>
+  <p class="requirement-line">Introduction: The introduction section introduces the topic or issue being addressed and provides the context for the author&#x27;s perspective. It may explain the significance or relevance of the topic and outline the author&#x27;s viewpoint or main argument to be elaborated upon in the body of the article.</p>
+  <p class="requirement-line">Background and Context: This section provides the necessary background information and context for readers to understand the topic and the author&#x27;s perspective. It may review relevant literature, theories, or previous research, highlighting key concepts or debates related to the issue.</p>
+  <p class="requirement-line">Author&#x27;s Perspective or Argument: The core of a perspective article is the author&#x27;s viewpoint, opinion, or argument on the topic. This section presents the author&#x27;s unique perspective, supported by evidence, reasoning, and examples. The author may draw upon their expertise, research, or experiences to strengthen their argument. It is important to present a well-structured and coherent argument, using logical reasoning and providing relevant supporting information.</p>
+  <p class="requirement-line">Counterarguments and Discussion: A good perspective article acknowledges and addresses potential counterarguments or opposing viewpoints. The author should engage with alternative perspectives, theories, or evidence and offer a thoughtful discussion of their strengths and weaknesses. By engaging with counterarguments, the author strengthens their own argument and demonstrates both intellectual rigor and due diligence.</p>
+  <p class="requirement-line">Implications and Significance: This section should discuss the broader implications and significance of the author&#x27;s perspective or argument. It may explore the practical, theoretical, or policy implications of adopting the proposed viewpoint. The author may also discuss potential future developments, research directions, or areas that require further investigation.</p>
+  <p class="requirement-line">Conclusion: The conclusion section summarizes the main points of the perspective article and restates the author&#x27;s viewpoint or argument. It may offer a compelling closing statement that reinforces the significance of the author&#x27;s perspective and encourages further discussion or research in the field.</p>
+  <p class="requirement-line">References: The references section lists all the sources cited in the perspective article, and should generally follow the &quot;Chicago&quot; style. It should be consistent with the journal&#x27;s guidelines.</p>
+  <p>Overall, a perspective article provides an opportunity for authors to share their unique viewpoints, opinions, or arguments on important topics within their field, contributing to scholarly discourse and stimulating further discussion and research in the area.</p>
+</div>
+  </div>
+</details>
+<details class="submission-type" id="correspondence">
+  <summary>
+    <span class="summary-num">09</span>
+    <span class="summary-main">
+      <span class="summary-label">Scholarly exchange</span>
+      <span class="summary-title">Correspondence or Letters to the Editor</span>
+      <span class="summary-desc">Concise letters responding to published work or raising focused points for discussion.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>Correspondence or letters to the editor provide an avenue for readers, researchers, or experts in the field to engage in discussions, raise concerns, offer clarifications, or provide additional insights related to previously published articles or topics of interest. These letters are typically shorter than regular research articles and serve as a means of communication and exchange within the scholarly community.</p>
+  <p>Here is a detailed description of the key elements and components typically found in correspondence or letters to the editor in an academic journal:</p>
+  <p class="requirement-line">Heading: The letter should include a clear heading that identifies it as a correspondence or letter to the editor. This heading usually appears at the top of the letter.</p>
+  <p class="requirement-line">Greeting: Begin the letter with a formal salutation, such as &quot;Dear Editor&quot; or &quot;To the Editor.&quot;</p>
+  <p class="requirement-line">Introduction: The introduction section provides a brief overview of the purpose of the letter. It may mention the specific article, issue, or topic to which the letter is in response. The introduction should be concise and clearly state the main point or argument of the letter.</p>
+  <p class="requirement-line">Body: The body of the letter contains the main content, where the author presents their views, concerns, questions, or additional information related to the topic. It is important to structure the body of the letter coherently and logically. Each paragraph should focus on a specific point or topic, providing clear and concise explanations or arguments.</p>
+  <p class="requirement-line">Reference to the Article: If the letter is in response to a specific article published in the journal, it is common to refer to that article by title, authors, and publication details. This allows readers and editors to understand the context and relevance of the letter.</p>
+  <p class="requirement-line">Supporting Evidence or Examples: If applicable, the author can provide supporting evidence, examples, or references to strengthen their argument or provide further information. This may include citing relevant research studies, data, or other authoritative sources.</p>
+  <p class="requirement-line">Conciseness and Clarity: Letters to the editor should be concise and to the point. It is important to communicate ideas clearly and avoid excessive jargon or technical language that may hinder understanding by a wider audience. The letter should be focused, specific, and address the main point or issue effectively.</p>
+  <p class="requirement-line">Politeness and Professionalism: It is essential to maintain a respectful and professional tone throughout the letter. Even if there are disagreements or criticisms, it is important to express them in a constructive and courteous manner. Personal attacks or derogatory language should be avoided.</p>
+  <p class="requirement-line">Conclusion: The conclusion of the letter should summarize the main points or arguments and may include any suggestions, recommendations, or requests for further action. It is also common to express gratitude to the editor or acknowledge the opportunity to contribute to the ongoing discussion in the field.</p>
+  <p class="requirement-line">Signature and Affiliation: End the letter with a closing, such as &quot;Sincerely&quot; or &quot;Best regards,&quot; followed by the author&#x27;s full name and affiliation. Including the author&#x27;s institutional affiliation adds credibility and allows readers to identify the author&#x27;s expertise in the field.</p>
+  <p class="requirement-line">Contact Information: Provide the author&#x27;s contact information, such as email address or mailing address, to allow the editor or other readers to reach out for further discussion or clarification, if necessary.</p>
+  <p>Overall, correspondence or letters to the editor serve as a platform for academic and professional discussion within the scholarly community, allowing readers to engage with published articles, raise concerns, provide additional insights, and contribute to the ongoing dialogue in the field.</p>
+</div>
+  </div>
+</details>
+<details class="submission-type" id="conference-report">
+  <summary>
+    <span class="summary-num">10</span>
+    <span class="summary-main">
+      <span class="summary-label">Event report</span>
+      <span class="summary-title">Conference or Meeting Report</span>
+      <span class="summary-desc">Summary and analysis of conferences, symposia, workshops, or scholarly meetings.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>Conference or meeting reports provide a summary and overview of a specific conference, symposium, workshop, or meeting related to a particular field of study. These reports aim to inform readers about the key topics, discussions, presentations, and outcomes of the event. Conference reports serve as a means of sharing the highlights and key takeaways from academic gatherings with a wider audience.</p>
+  <p>Here is a detailed description of the key elements and components generally expected from a conference or meeting report submitted to Limina:</p>
+  <p class="requirement-line">Title: The title of the report should accurately reflect the conference or meeting being summarized. It should be concise and clearly indicate the focus and scope of the event.</p>
+  <p class="requirement-line">Introduction: The introduction section provides a brief overview of the conference or meeting, including its purpose, location, date, and relevant background information. It may also mention the theme or main topics covered during the event.</p>
+  <p class="requirement-line">Objective or Scope: This section outlines the specific objective or scope of the conference or meeting report. It clarifies the intention of the report, whether it aims to provide a comprehensive overview of the entire event or focus on specific sessions, themes, or discussions.</p>
+  <p class="requirement-line">Keynote Speakers or Presentations: Highlight the keynote speakers or presentations that were particularly noteworthy or influential during the conference. Provide a summary of the main ideas, concepts, or findings presented by these speakers, along with any significant discussions or debates that arose from their talks.</p>
+  <p class="requirement-line">Sessions and Topics: Provide an overview of the different sessions, workshops, or panels that took place during the conference. Summarize the main topics, themes, or research areas covered in each session. Include any key findings, trends, or controversies discussed during these sessions.</p>
+  <p class="requirement-line">Presentations or Abstracts: If applicable, briefly summarize the presentations or abstracts of selected papers or research projects presented during the conference. Highlight any novel approaches, methodologies, or significant findings presented by the researchers.</p>
+  <p class="requirement-line">Discussions and Debates: Describe any significant discussions, debates, or questions that emerged during the conference. This includes interactions between speakers and participants, Q&amp;A sessions, or panel discussions that sparked intellectual exchange and generated new insights or perspectives.</p>
+  <p class="requirement-line">Emerging Trends or Future Directions: Discuss any emerging trends, research gaps, or future directions identified during the conference. This may include new areas of study, innovative methodologies, or pressing challenges that require further investigation or collaborative efforts.</p>
+  <p class="requirement-line">Conclusion: The conclusion section summarizes the main highlights and takeaways from the conference or meeting. It may emphasize the significance of the event in advancing knowledge or practice in the field and highlight any recommendations or actions resulting from the discussions.</p>
+  <p class="requirement-line">References: If any references or citations are used in the report, provide a list of these sources following the &quot;Chicago&quot; style.</p>
+  <p>Overall, conference or meeting reports provide valuable insights into academic gatherings, allowing readers to stay informed about the latest research, trends, and discussions in their field of interest. These reports contribute to the dissemination of knowledge and foster collaboration among researchers and practitioners.</p>
+</div>
+  </div>
+</details>
+<details class="submission-type" id="book-reviews">
+  <summary>
+    <span class="summary-num">11</span>
+    <span class="summary-main">
+      <span class="summary-label">Book review</span>
+      <span class="summary-title">Book Reviews</span>
+      <span class="summary-desc">Critical evaluation of books relevant to UAP studies and adjacent academic fields.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>A book review for Limina should provide a critical evaluation and analysis of a published book within a specific field of study. It offers readers an overview of the book&#x27;s content, assesses its strengths and weaknesses, and offers insights into its relevance, contributions, and implications for the field. A well-written book review engages with the book&#x27;s arguments, methodology, and evidence, while also providing a thoughtful and balanced assessment.</p>
+  <p>Here is a detailed description of the key elements and components that will generally be expected from book reviews submitted to Limina:</p>
+  <p class="requirement-line">Citation Information: Begin the book review with the complete citation information of the book being reviewed, including the author&#x27;s name, book title, publication year, publisher, and ISBN.</p>
+  <p class="requirement-line">Introduction: The introduction section provides a brief overview of the book being reviewed and its significance within the field. It introduces the author&#x27;s main arguments, the book&#x27;s objectives, and any relevant background information about the author&#x27;s expertise or the context in which the book was written.</p>
+  <p class="requirement-line">Summary of Content: Provide a concise summary of the book&#x27;s main content, highlighting its structure, chapters, and key themes. Summarize the main arguments, theories, or concepts presented by the author and describe the scope and breadth of the book&#x27;s coverage.</p>
+  <p class="requirement-line">Critical Analysis: Engage in a critical analysis of the book. Evaluate the author&#x27;s arguments, methodology, and evidence in a thoughtful and balanced manner. Consider the strengths and weaknesses of the book, assessing the clarity of the author&#x27;s writing, the logical coherence of the arguments, and the effectiveness of the evidence and examples presented. Assess the author&#x27;s ability to achieve the book&#x27;s stated objectives.</p>
+  <p class="requirement-line">Comparison to Existing Literature: Situate the book within the broader context of existing literature in the field. Compare the author&#x27;s arguments, perspectives, or findings to other influential works. Identify how the book builds upon or diverges from existing scholarship and discuss the book&#x27;s unique contributions or insights. Address any gaps or limitations in the book&#x27;s engagement with the existing literature.</p>
+  <p class="requirement-line">Evaluation of Relevance and Impact: Assess the relevance and potential impact of the book within the field. Discuss the book&#x27;s potential implications for theory, research, or practice. Consider how the book advances knowledge, introduces new perspectives, or addresses current debates or issues in the field. Reflect on the potential audience or readership for the book and evaluate its suitability for different academic or professional audiences.</p>
+  <p class="requirement-line">Conclusion: The conclusion section summarizes the main points made in the review and offers a final assessment of the book. Provide a clear recommendation regarding the book&#x27;s value and its potential impact within the field. Address any final thoughts or insights gained from engaging with the book, and emphasize its relevance or significance.</p>
+  <p class="requirement-line">References: If any references or citations are used in the review, provide a list of these sources following the &quot;Chicago&quot; style.</p>
+  <p>Overall, a well-written book review should offer readers a critical and insightful evaluation of a book&#x27;s content, methodology, and contributions within a specific field. It should help readers make informed decisions about the book&#x27;s relevance to their own research or professional interests and should contribute to scholarly discourse and knowledge dissemination.</p>
+</div>
+  </div>
+</details>
+<p class="additional-heading">Additional Submission Types We Accept</p>
+<details class="submission-type" id="critical-notice">
+  <summary>
+    <span class="summary-num">12</span>
+    <span class="summary-main">
+      <span class="summary-label">Critical notice</span>
+      <span class="summary-title">Critical Notice</span>
+      <span class="summary-desc">Evidence-based response to a published Limina research article or essay.</span>
+    </span>
+    <span class="summary-action" aria-hidden="true">Open</span>
+  </summary>
+  <div class="submission-type__body">
+<div class="prose">
+  <p>The &quot;Critical Note&quot; category invites scholars to provide a thoughtful, evidence-based response to a published research article or essay within the journal. Critical Notes aim to promote scholarly dialogue by engaging with the ideas, arguments, or findings presented in the original work. These notes are intended to advance discourse through constructive critique, reflection, and, where appropriate, alternative interpretations or perspectives.</p>
+  <p class="requirement-line">Suggested Guidelines:</p>
+  <p>Critical Notes must be scholarly, evidence-based, and respectful in tone.</p>
+  <p>Authors of Critical Notes should focus on constructive engagement with the article’s content, methodology, or conclusions.</p>
+  <p>Submissions should be 3,000–5,000 words (unless otherwise specified) and adhere to the journal’s formatting and referencing style (generally, the Chicago Style).</p>
+  <p>All Critical Notes undergo independent peer review to ensure academic rigor and relevance.</p>
+  <p>Notes will typically be published alongside the original article, with appropriate cross-referencing.</p>
+  <p>Authors of the original article may (and in most cases, will) be notified when a Critical Note is under consideration. In some cases, they may be invited to submit a brief reply in a future issue to continue the scholarly conversation.</p>
+</div>
+  </div>
+</details>
+</div>
+            </div>
+        </section>
+
+
+        <section class="section section--dark" id="editorial-board">
+            <div class="container">
+                <div class="board-intro">
+                    <div>
+                        <p class="section__label">Editorial Board</p>
+                        <h2 class="section__title">A cross-disciplinary board for a cross-disciplinary journal.</h2>
+                        <p class="section__lead">Limina’s editorial structure brings together scholars across the sciences, humanities, social sciences, law, philosophy, religious studies, risk, and UAP research. This breadth matters because the journal is helping stabilize the standards of an emerging academic field.</p>
+                    </div>
+                    <p class="board-note">The roster below is presented without extra biographical claims so that the section remains clean, accurate, and easy to maintain.</p>
+                </div>
+
+                <div class="board-leadership" aria-label="Limina editorial leadership">
+                    <article class="board-person board-person--lead">
+                        <div class="board-person__role">Editor-in-Chief</div>
+                        <div class="board-person__name">Dr. Michael C. Cifone</div>
+                        <div class="board-person__affiliation">St. John’s University</div>
+                        <div class="board-person__country">U.S.A.</div>
+                    </article>
+                    <article class="board-person board-person--lead">
+                        <div class="board-person__role">Associate Editor</div>
+                        <div class="board-person__name">Dr. Michael D. Silberstein</div>
+                        <div class="board-person__affiliation">Elizabethtown College</div>
+                        <div class="board-person__country">U.S.A.</div>
+                    </article>
+                </div>
+
+                <div class="board-grid" aria-label="Limina editorial review board members">
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. Michael Bohlander</div>
+                        <div class="board-person__affiliation">Durham University</div>
+                        <div class="board-person__country">U.K.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. Gabriel G. De la Torre</div>
+                        <div class="board-person__affiliation">University of Cadiz</div>
+                        <div class="board-person__country">Spain</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. Stephen C. Finley</div>
+                        <div class="board-person__affiliation">Louisiana State University</div>
+                        <div class="board-person__country">U.S.A.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Dr. Aaron French</div>
+                        <div class="board-person__affiliation">Copenhagen University</div>
+                        <div class="board-person__country">Denmark</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. Steve Fuller</div>
+                        <div class="board-person__affiliation">University of Warwick</div>
+                        <div class="board-person__country">U.K.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Dr. Eric Halford</div>
+                        <div class="board-person__affiliation">Rabdan Academy</div>
+                        <div class="board-person__country">U.A.E.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Dr. Jacob Haqq-Misra</div>
+                        <div class="board-person__affiliation">Blue Marble Space Institute for Science</div>
+                        <div class="board-person__country">U.S.A.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Dr. Filipe Nascimento</div>
+                        <div class="board-person__affiliation">University College London</div>
+                        <div class="board-person__country">U.K.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. Dr. Hakan Kayal</div>
+                        <div class="board-person__affiliation">Universität Würzburg</div>
+                        <div class="board-person__country">Germany</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. Paul Kingsbury</div>
+                        <div class="board-person__affiliation">Simon Fraser University</div>
+                        <div class="board-person__country">Canada</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. Kevin H. Knuth</div>
+                        <div class="board-person__affiliation">State University of New York, Albany</div>
+                        <div class="board-person__country">U.S.A.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. Jeffrey Kripal</div>
+                        <div class="board-person__affiliation">Rice University</div>
+                        <div class="board-person__country">U.S.A.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Dr. Mark Rodeghier</div>
+                        <div class="board-person__affiliation">Center for UFO Studies</div>
+                        <div class="board-person__country">U.S.A.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. W. Mark Stuckey</div>
+                        <div class="board-person__affiliation">Elizabethtown College</div>
+                        <div class="board-person__country">U.S.A.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. Dr. Karl Svozil</div>
+                        <div class="board-person__affiliation">Institut für Theoretische Physik, Technische Universität</div>
+                        <div class="board-person__country">Vienna</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Dr. Beatriz Villarroel</div>
+                        <div class="board-person__affiliation">Nordic Institute for Theoretical Physics</div>
+                        <div class="board-person__country">Sweden</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. Alexander Wendt</div>
+                        <div class="board-person__affiliation">Ohio State University</div>
+                        <div class="board-person__country">U.S.A.</div>
+                    </article>
+                    <article class="board-person">
+                        <div class="board-person__role">Editorial Review Board</div>
+                        <div class="board-person__name">Prof. (Emeritus) Michael E. Zimmerman</div>
+                        <div class="board-person__affiliation">University of Colorado at Boulder</div>
+                        <div class="board-person__country">U.S.A.</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="submit-band" id="submit">
+            <div class="container submit-band__inner">
+                <div>
+                    <p class="section__label">Ready to submit</p>
+                    <h2>Submit and track manuscripts through Limina’s Scholastica portal.</h2>
+                    <p>Authors should consult the relevant submission-type guidance before uploading a manuscript. ISSN: 2995-0384 (Online) | ISSN: 2995-0376 (Print).</p>
+                </div>
+                <a class="button button--primary" href="https://limina.scholasticahq.com/">Open Scholastica</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div>
+                <div class="footer__title">Limina</div>
+                <div class="footer__sub">The Journal of UAP Studies · ISSN: 2995-0384 (Online) | ISSN: 2995-0376 (Print)</div>
+            </div>
+            <div class="footer__links">
+                <a href="#top">Back to top</a>
+                <a href="https://www.societyforuapstudies.org/limina">Journal content</a>
+                <a href="#field-map">Field Map</a>
+                <a href="https://www.societyforuapstudies.org/">Society for UAP Studies</a>
+                <a href="https://limina.scholasticahq.com/editorial-board">Editorial Board</a>
+                <a href="https://limina.scholasticahq.com/">Scholastica</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const allTypes = Array.from(document.querySelectorAll('.submission-type'));
+        document.querySelector('[data-expand-all]')?.addEventListener('click', () => allTypes.forEach(item => item.open = true));
+        document.querySelector('[data-collapse-all]')?.addEventListener('click', () => allTypes.forEach(item => item.open = false));
+        document.querySelectorAll('[data-open-type]').forEach(link => {
+            link.addEventListener('click', event => {
+                const id = link.getAttribute('data-open-type');
+                const target = document.getElementById(id);
+                if (!target) return;
+                event.preventDefault();
+                target.open = true;
+                history.replaceState(null, '', '#' + id);
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+        window.addEventListener('DOMContentLoaded', () => {
+            if (location.hash) {
+                const target = document.querySelector(location.hash);
+                if (target?.matches('details')) target.open = true;
+            }
+        });
+    </script>
+</body>
+</html>
