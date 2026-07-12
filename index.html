@@ -330,6 +330,150 @@
         .issn-note span { color: var(--gold-light); }
 
 
+        /* Submission Requirements */
+        .requirements-intro {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
+            gap: 2rem;
+            align-items: start;
+            margin-bottom: 2.1rem;
+        }
+        .requirements-note {
+            border-left: 2px solid rgba(62,128,174,0.35);
+            padding: 0.85rem 0 0.85rem 1.05rem;
+            color: var(--gray-600);
+            font-size: 0.88rem;
+            line-height: 1.78;
+            background: linear-gradient(90deg, rgba(62,128,174,0.045), transparent 60%);
+        }
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.85rem;
+            margin: 2rem 0 2.8rem;
+        }
+        .requirement-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-top: 3px solid rgba(62,128,174,0.64);
+            border-radius: 0 0 var(--radius) var(--radius);
+            padding: 1.15rem 1.18rem;
+            min-height: 214px;
+            transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+        }
+        .requirement-card:hover {
+            border-color: rgba(62,128,174,0.34);
+            box-shadow: 0 8px 28px rgba(24,36,58,0.08);
+            transform: translateY(-1px);
+        }
+        .requirement-card:nth-child(2n) { border-top-color: rgba(184,150,46,0.68); }
+        .requirement-card__label {
+            font-family: var(--type-mono);
+            font-size: 0.58rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--limina-blue);
+            margin-bottom: 0.65rem;
+        }
+        .requirement-card:nth-child(2n) .requirement-card__label { color: var(--gold); }
+        .requirement-card__title {
+            font-family: var(--type-display);
+            font-size: 1.18rem;
+            line-height: 1.22;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 0.65rem;
+        }
+        .requirement-card p, .requirement-card li {
+            color: var(--gray-600);
+            font-size: 0.82rem;
+            line-height: 1.62;
+        }
+        .requirement-card ul { list-style: none; display: grid; gap: 0.4rem; padding: 0; margin: 0; }
+        .requirement-card li { position: relative; padding-left: 0.9rem; }
+        .requirement-card li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.58em;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--gold);
+        }
+        .requirements-band {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+            gap: 2rem;
+            align-items: start;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+        }
+        .requirements-band__panel {
+            background: var(--navy-deep);
+            color: var(--white);
+            border: 1px solid rgba(184,150,46,0.18);
+            border-top: 3px solid var(--gold);
+            border-radius: 0 0 var(--radius) var(--radius);
+            padding: 1.35rem 1.45rem;
+        }
+        .requirements-band__panel h3 {
+            font-family: var(--type-display);
+            font-size: 1.42rem;
+            font-weight: 500;
+            line-height: 1.22;
+            margin-bottom: 0.8rem;
+        }
+        .requirements-band__panel p {
+            color: rgba(255,255,255,0.62);
+            font-size: 0.88rem;
+            line-height: 1.74;
+            margin-bottom: 0.75rem;
+        }
+        .requirements-band__panel p:last-child { margin-bottom: 0; }
+        .declaration-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.7rem;
+        }
+        .declaration-item {
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius);
+            padding: 0.9rem 0.95rem;
+            background: linear-gradient(180deg, #fff, #fbfaf7);
+        }
+        .declaration-item__title {
+            font-family: var(--type-mono);
+            font-size: 0.6rem;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--limina-blue);
+            margin-bottom: 0.42rem;
+        }
+        .declaration-item p {
+            color: var(--gray-600);
+            font-size: 0.8rem;
+            line-height: 1.62;
+        }
+        .requirements-link-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1.4rem;
+        }
+        .requirements-link-row a {
+            font-family: var(--type-mono);
+            font-size: 0.64rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1px solid var(--gray-200);
+            border-radius: 2rem;
+            padding: 0.35rem 0.68rem;
+            color: var(--gray-600);
+        }
+        .requirements-link-row a:hover { color: var(--limina-blue); border-color: rgba(62,128,174,0.35); }
+
+
         /* Field Map of UAP Studies */
         .field-map__intro {
             display: grid;
@@ -690,9 +834,9 @@
             .nav__links { justify-content: flex-start; }
             .two-col, .two-col--2-3, .two-col--3-2 { grid-template-columns: 1fr; gap: 2rem; }
             .type-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .field-map__intro, .field-architecture, .principles-panel__head, .board-intro { grid-template-columns: 1fr; }
+            .field-map__intro, .field-architecture, .principles-panel__head, .board-intro, .requirements-intro, .requirements-band { grid-template-columns: 1fr; }
             .field-map__side { position: static; }
-            .axis-grid, .principle-grid { grid-template-columns: 1fr; }
+            .axis-grid, .principle-grid, .requirements-grid, .declaration-list { grid-template-columns: 1fr; }
             .board-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .submit-band__inner, .footer__inner { align-items: flex-start; flex-direction: column; }
             .footer__links { justify-content: flex-start; }
@@ -732,6 +876,7 @@
             <ul class="nav__links">
                 <li><a href="#mission">Mission</a></li>
                 <li><a href="#field-map">Field Map</a></li>
+                <li><a href="#requirements">Requirements</a></li>
                 <li><a href="#process">Review</a></li>
                 <li><a href="#revisions">Decisions</a></li>
                 <li><a href="#editorial-board">Board</a></li>
@@ -749,9 +894,9 @@
             <p class="hero__lede">Limina is an open-access, peer-reviewed academic journal dedicated to the serious, multidisciplinary study of unidentified aerospace phenomena and the methodological questions raised by an emerging field.</p>
             <div class="hero__actions">
                 <a class="button button--primary" href="https://limina.scholasticahq.com/">Submit through Scholastica</a>
+                <a class="button button--secondary" href="#requirements">Submission requirements</a>
                 <a class="button button--secondary" href="#types">Browse submission types</a>
                 <a class="button button--secondary" href="#field-map">View field map</a>
-                <a class="button button--secondary" href="#process">Review process</a>
             </div>
             <div class="hero__meta" aria-label="Journal attributes">
                 <div class="hero__meta-item"><span class="hero__meta-label">Access</span><span class="hero__meta-value">Open access</span></div>
@@ -1127,6 +1272,114 @@
                         <article class="principle-card"><div class="principle-card__title">Reproducibility / Traceability</div><p>Provide enough detail for independent verification, evaluation, reconstruction, or critical assessment.</p></article>
                         <article class="principle-card"><div class="principle-card__title">Ethical Conduct</div><p>Respect human subjects, sensitive materials, privacy, consent, and relevant publication-ethics norms.</p></article>
                         <article class="principle-card"><div class="principle-card__title">Respectful Scholarly Tone</div><p>Avoid ridicule, sensationalism, and unsupported insinuation; criticism should be constructive and precise.</p></article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section section--light" id="requirements">
+            <div class="container">
+                <div class="requirements-intro">
+                    <div>
+                        <p class="section__label">Submission Requirements</p>
+                        <h2 class="section__title">Prepare the manuscript before selecting the submission type.</h2>
+                        <p class="section__lead">This section consolidates Limina’s practical submission rules without repeating the full peer-review workflow or the detailed submission-type guide below. Authors should use it as a pre-submission checklist before uploading through Scholastica.</p>
+                    </div>
+                    <p class="requirements-note">The requirements below cover file format, originality, anonymization, manuscript length, citation style, illustrations and tables, required disclosures, publication ethics, proofs, and copyright. They complement—not replace—the field map and the submission-type standards.</p>
+                </div>
+
+                <div class="requirements-grid" aria-label="Manuscript preparation requirements">
+                    <article class="requirement-card">
+                        <div class="requirement-card__label">01 / Eligibility</div>
+                        <h3 class="requirement-card__title">Submission category, originality, and exclusivity</h3>
+                        <ul>
+                            <li>Every manuscript should be classifiable under one of Limina’s submission types.</li>
+                            <li>Submissions must not have been published previously or be under consideration elsewhere.</li>
+                            <li>Multiple concurrent submissions by the same author or author team are not generally accepted.</li>
+                        </ul>
+                    </article>
+                    <article class="requirement-card">
+                        <div class="requirement-card__label">02 / Files</div>
+                        <h3 class="requirement-card__title">Electronic submission and source files</h3>
+                        <ul>
+                            <li>Submit manuscripts through the Scholastica portal in MS Word or PDF format.</li>
+                            <li>LaTeX submissions should include source files, style files, figures, and related supplemental material.</li>
+                            <li>Paper submissions require direct discussion with the editor-in-chief before submission.</li>
+                        </ul>
+                    </article>
+                    <article class="requirement-card">
+                        <div class="requirement-card__label">03 / Anonymity</div>
+                        <h3 class="requirement-card__title">Double-blind readiness</h3>
+                        <p>Because Limina uses double-blind peer review, author names, self-identifying references, institutional clues, acknowledgments, and metadata should be removed before review. Only a suitably anonymized manuscript can enter the review process.</p>
+                    </article>
+                    <article class="requirement-card">
+                        <div class="requirement-card__label">04 / Length</div>
+                        <h3 class="requirement-card__title">Concision, abstract, and audience</h3>
+                        <ul>
+                            <li>Manuscripts should be concise and clearly written, with a general ceiling of 6,000 words unless a submission type states otherwise.</li>
+                            <li>Include an abstract of 150–300 words summarizing the background, rationale, and main conclusions.</li>
+                            <li>Write for a well-informed, highly trained general academic audience across disciplines.</li>
+                        </ul>
+                    </article>
+                    <article class="requirement-card">
+                        <div class="requirement-card__label">05 / Style</div>
+                        <h3 class="requirement-card__title">References, notes, and technical material</h3>
+                        <ul>
+                            <li>References and in-text citations should generally follow the Chicago Manual of Style.</li>
+                            <li>References cited in the text should be listed alphabetically under the first author’s name.</li>
+                            <li>Extended technical discussions should be placed in footnotes or appendices where appropriate.</li>
+                        </ul>
+                    </article>
+                    <article class="requirement-card">
+                        <div class="requirement-card__label">06 / Visual Data</div>
+                        <h3 class="requirement-card__title">Figures, artwork, and tables</h3>
+                        <ul>
+                            <li>Number illustrations and tables consecutively and refer to them by number in the text.</li>
+                            <li>Provide clear captions and high-quality digital files for figures, diagrams, photographs, and charts.</li>
+                            <li>Electronic artwork should be supplied as .eps or .pdf, with 1200 dpi for line drawings and 300 dpi for half-tones or gray-scale art.</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="requirements-band">
+                    <aside class="requirements-band__panel" aria-label="Editorial handling note">
+                        <p class="section__label">Review readiness</p>
+                        <h3>Submission does not automatically guarantee review.</h3>
+                        <p>Only manuscripts that fall within Limina’s scope and meet minimum standards of academic scholarship will be sent for professional peer review. After a manuscript is accepted for review, Limina aims to complete the peer-review process within roughly two to three months.</p>
+                        <p>Where a revise-and-resubmit decision is issued, authors should provide a detailed point-by-point response explaining where each reviewer comment has been addressed, and why any comment has not been adopted.</p>
+                        <div class="requirements-link-row">
+                            <a href="#process">Review process</a>
+                            <a href="#revisions">Decisions</a>
+                            <a href="#types">Submission types</a>
+                        </div>
+                    </aside>
+
+                    <div class="declaration-list" aria-label="Required author declarations and ethics requirements">
+                        <article class="declaration-item">
+                            <div class="declaration-item__title">Cover letter &amp; conflicts</div>
+                            <p>A cover letter may be included where useful. Authors must submit a disclosure statement identifying all potential conflicts of interest; if there are none, that should also be stated.</p>
+                        </article>
+                        <article class="declaration-item">
+                            <div class="declaration-item__title">Data &amp; verification</div>
+                            <p>Reports of original research should represent data accurately and provide sufficient detail and references to allow replication, verification, or critical assessment where possible.</p>
+                        </article>
+                        <article class="declaration-item">
+                            <div class="declaration-item__title">Originality &amp; plagiarism</div>
+                            <p>All submissions must be original works by the listed author or authors. Plagiarism and duplicate publication are not tolerated, though a properly framed précis may be considered where appropriate.</p>
+                        </article>
+                        <article class="declaration-item">
+                            <div class="declaration-item__title">Authorship &amp; funding</div>
+                            <p>Listed authors should be limited to substantial contributors. Multi-author work should identify a corresponding author, and institutional, foundation, or other substantial support should be disclosed.</p>
+                        </article>
+                        <article class="declaration-item">
+                            <div class="declaration-item__title">Proofs</div>
+                            <p>After final publication approval, authors receive one set of proofs. Proofreading should be limited to typographical corrections; substantive additions may be made only if necessary and space permits.</p>
+                        </article>
+                        <article class="declaration-item">
+                            <div class="declaration-item__title">Copyright</div>
+                            <p>After acceptance, Limina will request a suitable copyright arrangement. Initial issues allow authors to retain copyright subject to applicable limits and conditions.</p>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -1790,7 +2043,7 @@
                 <div>
                     <p class="section__label">Ready to submit</p>
                     <h2>Submit and track manuscripts through Limina’s Scholastica portal.</h2>
-                    <p>Authors should consult the relevant submission-type guidance before uploading a manuscript. ISSN: 2995-0384 (Online) | ISSN: 2995-0376 (Print).</p>
+                    <p>Authors should consult the submission requirements and relevant submission-type guidance before uploading a manuscript. ISSN: 2995-0384 (Online) | ISSN: 2995-0376 (Print).</p>
                 </div>
                 <a class="button button--primary" href="https://limina.scholasticahq.com/">Open Scholastica</a>
             </div>
@@ -1807,6 +2060,7 @@
                 <a href="#top">Back to top</a>
                 <a href="https://www.societyforuapstudies.org/limina">Journal content</a>
                 <a href="#field-map">Field Map</a>
+                <a href="#requirements">Requirements</a>
                 <a href="https://www.societyforuapstudies.org/">Society for UAP Studies</a>
                 <a href="https://limina.scholasticahq.com/editorial-board">Editorial Board</a>
                 <a href="https://limina.scholasticahq.com/">Scholastica</a>
